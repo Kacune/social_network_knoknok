@@ -1,0 +1,428 @@
+.navigation_finance{
+    margin: 0.78125vw 0;
+    width: 100%;
+    height: 3.385vw;
+    display: flex;
+    align-items: center;
+    background-color: #EDF5FB;
+}
+
+.button_navigation_finance{
+    width: 25%;
+    height: 3.385vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #206DB4;
+    transition: .4s;
+}
+
+.button_navigation_finance div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-right: 0.052vw solid #2D7689;
+    height: 2.6vw;
+}
+
+.button_navigation_finance:last-child div{
+    border: none;
+}
+
+
+.button_navigation_finance:hover{
+    background-color: #EC95C7;
+    color: white;
+}
+
+.button_navigation_finance a{
+    text-decoration: none;
+}
+
+.balance_finance{
+    display: flex;
+    justify-content: space-between;
+    color: #545454;
+    margin:0.52vw 0;
+}
+
+.title_balance_finance{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score_balance_finance{
+    display: flex;
+}
+
+.title_score_balance_finance{
+    width: 4.6875vw;
+    border-right: 0.052vw solid #545454;
+}
+
+.numbers_score_balance_finance{
+    padding:;
+}
+
+.content_finance{
+    background-color: #EDF5FB;
+}
+
+.top_content_finance{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.half_window{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 0.78125vw;
+}
+
+.row_half_window{
+    padding: 0.26vw 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_title{
+    font-size: 2.08vw ;
+    font-weight: bold;
+    color: #206DB4;
+}
+
+.column_row_half_window{
+    color: #206DB4;
+    font-size: 0.78125vw;
+}
+
+.column_row_half_window input{
+    height: 1.5625vw;
+    width: 10.67vw;
+    border: none;
+    border-radius: 0.4vw;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 0.52vw ;
+    border: 0.052vw solid #205AB2;
+}
+
+.column_row_half_window .a_column_row_half_window{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.column_row_half_window select{
+    width: 9.635vw;
+    height: 3.385vw;
+    outline: none;
+    border: none;
+}
+
+.block_column_row_half_window{
+    width: 10.9375vw;
+    height: 4.6875vw;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.26vw 0.26vw 0.26vw #545454;
+}
+
+.half_column_row_half_window input{
+    width: 3.65vw;
+    height: 3.125vw;
+    font-size: 1.5625vw;
+    font-weight: bold;
+    color: #206DB4;
+    border-radius: 0;
+    border-bottom: 0.052vw solid #206DB4;
+}
+
+#half_column_row_half_window_count{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 0;
+}
+
+.half_column_row_half_window{
+    width: 70%;
+}
+
+.title_half_column_row_half_window{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2.08vw ;
+    font-weight: bold;
+}
+
+
+.number_cards{
+    margin-top: 0.78125vw;
+}
+
+.name_requisites{
+    margin-top: 0.78125vw;
+}
+
+.number_cards input{
+    font-size: 1.04vw;
+    width: 4.6875vw;
+    height: 2.34375vw;
+    margin-right: 0.4vw;
+    outline: none;
+    border: none;
+    background-color: #EDF5FB;
+    color: #545454;
+    box-sizing: border-box;
+    padding: 0 1.04vw;
+}
+
+.else_requests{
+    display: flex;
+    height: 1.5625vw;
+    margin-top: 0.78125vw;
+}
+
+.date_requests{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.else_requests input{
+    width: 260px;
+    height: 1.5625vw;
+    border: none;
+    outline: none;
+    margin-right: 1.3vw;
+    background-color: #EDF5FB;
+    font-size: 1.04vw;
+    color: #545454;
+}
+
+.date_requests input{
+    width: 2.6vw;
+    border: none;
+    outline: none;
+    margin: 0 0.15625vw;
+    background-color: #EDF5FB;
+    font-size: 1.04vw;
+    color: #545454;
+    box-sizing: border-box;
+    padding: 0 0.4vw;
+}
+
+.card_requisites{
+    width: 22.9vw;
+    height: 12.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.04vw;
+    color: #545454;
+    border-radius: 0.52vw ;
+    background-color: white;
+    box-shadow: 0.26vw 0.52vw  0.26vw #545454;
+}
+
+.bottom_content_finance{
+    padding: 2.6vw 0;
+    display: flex;
+}
+
+.card_requests_cvv{
+    width: 22.92vw;
+    height: 240px;
+    display: flex;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-radius: 0.52vw ;
+    background-color: white;
+}
+
+.cvv_input{
+    width: 9.11w;
+    height: 135px;
+}
+
+.cvv_input input{
+    width: 6.25vw;
+    height: 2.34375vw;
+    border: none;
+    outline: none;
+    background-color: #EDF5FB;
+    font-size: 1.04vw;
+    box-sizing: border-box;
+    padding: 0 1.5625vw;
+    color: #545454;
+}
+
+.cvv_input p{
+    padding-top: 0.52vw ;
+    width: 6.77vw;
+}
+
+.div_line_button{
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding:0 3.125vw 1.04vw 0;
+}
+
+.div_line_button p{
+    font-size: 0.83vw;
+}
+
+.button_send{
+    padding: 0.26vw 0.52vw ;
+    color: white;
+    background-color: #206DB4;
+    border-radius: 0.4vw;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .4s;
+    height: 1.9vw ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_send:hover{
+    background-color: #205AB2;
+}
+
+.content_container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5625vw 0;
+}
+
+.line_half_window{
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+}
+
+.price_card{
+    width: 11.2vw;
+    height: 6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.4vw;
+    box-shadow: 0.26vw 0.26vw 0.26vw #545454;
+    box-sizing: border-box;
+    padding: 1.3vw;
+}
+
+.check{
+    width: 2.45vw;
+    height: 2.45vw;
+    border-radius: 0.4vw;
+    background-color: #EDF5FB;
+}
+
+.cost_price_card_KN{
+    font-size: 1.82vw;
+    font-weight: bold;
+    color: #206DB4;
+    display: flex;
+}
+
+.cost_price_card_RUB{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1.5625vw;
+}
+
+.cost_price_card_KN input{
+    width: 2.86vw;
+    font-size: 1.82vw;
+    border-bottom: 0.052vw solid #205AB2;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    color: #206DB4;
+    font-weight: bold;
+}
+
+.cost_price_card_RUB input{
+    width: 11.2vw;
+    height: 3.125vw;
+    border: none;
+    border-radius: 0.4vw;
+    color: #545454;
+    box-sizing: border-box;
+    padding: 0 1.04vw;
+    font-size: 1.04vw;
+    outline: none;
+}
+
+.width400{
+    width: 20.8vw;
+}
+
+.line_ad_half_window{
+    display: flex;
+    justify-content: center;
+}
+
+.line_ad_half_window select{
+    margin-right: 0.78125vw;
+    width: 8.33vw;
+    height: 3.125vw;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    color: #8b8b8b;
+    box-sizing: border-box;
+    padding: 0 1.04vw;
+    font-size: 0.83vw;
+}
+
+.line_ad_half_window input{
+    width: 10.4vw;
+    height: 3.125vw;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 0.78125vw;
+    font-size: 1.04vw;
+}
+
+.grey_row{
+    padding: 0.78125vw 0;
+    background-color: white;
+}
+
+.grey_row input{
+    background-color: #EDF5FB;
+}
+
+.js-tab-content{
+    display: none;
+}
+
+.active{
+    display: block;
+
+}
+
+.js-tab-triger.active{
+    background-color: #EC95C7;
+    color: white;
+}

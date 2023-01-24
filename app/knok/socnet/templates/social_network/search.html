@@ -1,0 +1,319 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_search.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_anketa.css'%}">
+{% endblock %}
+
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/script_search.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="string_search" id="search_vue">
+    <form class="string_search__form" @submit.prevent="search()">
+        <div class="string_search__form_line">
+            <div class="string_search__icon">
+                <img class="isearch_img" src="{% static 'social_network/icons/search/isearch.png' %}" alt="">
+            </div>
+            <select class="country" v-model="country">
+                <option value="Россия">Россия</option>
+                <option value="Казахстан">Казахстан</option>
+                <option value="Украина">Украина</option>
+            </select>
+            <select v-model="city">
+                <option value="Красноярск">Красноярск</option>
+                <option value="Москва">Москва</option>
+                <option value="Санкт-Петербург">Санкт-Петербург</option>
+                <option value="Севастополь">Севастополь</option>
+                <option value="Новгород">Новгород</option>
+                <option value="Казань">Казань</option>
+                <option value="Владивосток">Владивосток</option>
+                <option value="Норильск">Норильск</option>
+            </select>
+            <div class="sex_items">
+                <p>пол</p>
+                <div id="male" class="sex_elem_div">
+                    <img :class="{select_sex: male}" src="{% static 'social_network/icons/search/male.png' %}" @click="changeGender('male')">
+                    <img :class="{select_sex: female}" src="{% static 'social_network/icons/search/female.png' %}" @click="changeGender('female')">
+                </div>
+            </div>
+            <div class="age">
+                <p>возраст</p>
+                <select v-model="age_start">
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57">57</option>
+                    <option value="58">58</option>
+                    <option value="59">59</option>
+                    <option value="60">60</option>
+                    <option value="61">61</option>
+                    <option value="62">62</option>
+                    <option value="63">63</option>
+                    <option value="64">64</option>
+                    <option value="65">65</option>
+                </select>
+                <select v-model="age_end">
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57">57</option>
+                    <option value="58">58</option>
+                    <option value="59">59</option>
+                    <option value="60">60</option>
+                    <option value="61">61</option>
+                    <option value="62">62</option>
+                    <option value="63">63</option>
+                    <option value="64">64</option>
+                    <option value="65">65</option>
+                </select>
+            </div>
+        </div>
+        <div class="string_search__form_line" style="justify-content: space-between; padding: 0 33px">
+            <!--<div class="line_anketa none_flex flex online">
+                <input type="checkbox" id="online">
+                <label for="online">&#10004;</label>
+                <p>Сейчас на сайте</p>
+            </div>
+            -->
+            <input type="submit" name="" value="ПОИСК">
+        </div>
+    </form>
+</div>
+<!--
+<div class="line_etc" id="search_line" class="hide_tr">
+    <img class="hide_search noclick" src="{% static 'social_network/icons/search/hide_triangle.png' %}" alt="">
+    <div class="title_nav_hide">Анкета поиска</div>
+</div>
+<div class="search_anketa" id="go_bottom" style="left: 0;">
+    <div class="any_anketa" id="any_anketa">
+        <div class="line_anketa">
+            <div class="column_anketa">
+                <div class="line_param">
+                    <div class="title_line_param">Телосложение</div>
+                    <select name="">
+                        <option value="">XXXXXXX</option>
+                    </select>
+                </div>
+                <div class="line_param">
+                    <div class="title_line_param">Рост, см</div>
+                    <select name="">
+                        <option value="">170</option>
+                    </select>
+                </div>
+                <div class="line_param">
+                    <div class="title_line_param">Вес, кг</div>
+                    <select name="">
+                        <option value="">60</option>
+                    </select>
+                </div>
+                <div class="line_param">
+                    <div class="title_line_param">Курение</div>
+                    <select name="">
+                        <option value="">Нейтрально</option>
+                    </select>
+                </div>
+                <div class="line_param">
+                    <div class="title_line_param">Алкоголь</div>
+                    <select name="">
+                        <option value="">Нейтрально</option>
+                    </select>
+                </div>
+                <div class="line_param">
+                    <div class="title_line_param">Семейное положение</div>
+                    <select name="">
+                        <option value="">Только холостая</option>
+                    </select>
+                </div>
+            </div>
+            <div class="column_anketa">
+                <div class="title_line_param">Коротко опишите интересующие
+                    вас дополнительные параметры
+                </div>
+                <textarea name="" cols="30" rows="10"></textarea>
+            </div>
+
+        </div>
+        <div class="line_anketa none_flex">
+            <div class="title_line_anketa">Цель знакомства</div>
+            <div class="content_param_anketa">
+                <div class="content_param_anketa_column">
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Совместное путешествие</p>
+                    </div>
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Создание семьи</p>
+                    </div>
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Совместный досуг</p>
+                    </div>
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Реальное общение</p>
+                    </div>
+                </div>
+                <div class="content_param_anketa_column">
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Виртуальное общениe</p>
+                    </div>
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Дружба и общение</p>
+                    </div>
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Совместное занятия спортом</p>
+                    </div>
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Общение без обязательств</p>
+                    </div>
+                </div>
+                <div class="content_param_anketa_column">
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Секс на один два
+                            <раза></раза>
+                        </p>
+                    </div>
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Регулярный секс</p>
+                    </div>
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Виртуальный секс</p>
+                    </div>
+                    <div class="content_param_anketa_column_line">
+                        <label for=""></label>
+                        <input type="checkbox">
+                        <p>Ищу спонсора</p>
+                    </div>
+                </div>
+            </div>
+            <div class="line_etc">
+                <div class="line_etc_div">
+                    <input type="text" placeholder="Иное">
+                </div>
+            </div>
+        </div>
+        <div class="line_etc">
+            <input type="submit" value="СОХРАНИТЬ">
+        </div>
+    </div>
+</div>
+-->
+<div class="top_content" id="search_vue_content">
+    <div class="result_search__etc">
+            <a v-for="(elem, index) in search_list" :href="page_link(index)">
+                <div class="result_search__etc__elem">
+                    <div class="result_search__etc__elem_container">
+                        <div class="result_search__etc__elem_photo">
+                            <img class="result_search__etc__elem_photo__photo" :src="pathAvatar(index)" alt="" @click="pageId(index)">
+                            <!--<div class="count_photo">
+                                <p>0</p>
+                                <img src="{% static 'social_network/icons/search/camera_white.png' %}" alt="">
+                            </div>-->
+                        </div>
+                        <div class="result_search__etc__elem_title">
+                            {% verbatim %}
+                            <div class="result_search__etc__elem_title_name">{{elem.username}}</div>
+                            <div class="result_search__etc__elem_title_agecity">{{elem.age}} {{elem.city}}</div>
+                            {% endverbatim %}
+                        </div>
+                    </div>
+                </div>
+            </a>
+    </div>
+</div>
+{% endblock %}

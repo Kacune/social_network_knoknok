@@ -1,0 +1,44 @@
+<div class="photo_all_screen" id='photo_all_screen'>
+    <div class="gray" onclick="show('photo_all_screen', 'none');"></div>
+    <div class="photo_all_screen_container">
+        <div class="photo_all_screen__photo">
+            <div class="big_photo" style="height: 46.875vw;">
+                <div class="mySlides fade" v-for="(elem, index) in photoSrc" v-bind:data-image="index">
+                    <img :src="pathPhoto(index)" :class="{openImg : clicked}">
+                    <div class="like_look">{% verbatim %}{{elem.description}}{% endverbatim %}</div>
+                </div>
+                <a class="prev" @click="plusSlides(-1)">&#10094;</a>
+                <a class="next" @click="plusSlides(1)">&#10095;</a>
+                <div class="expand" @click="changeSize()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="71.12" height="65.111" viewBox="0 0 71.12 65.111">
+                        <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(-4.661 -1.694)">
+                            <path id="expand1" data-name="expand1"
+                                  d="M30.041,26.933l-20.1,1.036H2.9l3.522,1.047V47.443L5.179,67.332a131.542,131.542,0,0,1,20.3-2.486,124.837,124.837,0,0,1,20.1,1.237l.829-9.317-.829-18.232v-11.6Z"
+                                  transform="translate(2.33 -3.033)" fill="none" stroke="#3c63ad" stroke-width="4"/>
+                            <path id="expand2" data-name="expand2"
+                                  d="M29.419,27.14l.829-7.251-.829-9.737,7.246-.1,9.328-.732,17.2-.829,6.008.829V24.24l1.243,14.3L69.2,48.894l-6.008-1.243h-17.2"
+                                  transform="translate(3.33 -4.794)" fill="none" stroke="#3c63ad" stroke-width="4"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="list_photo" style="height: 46.875vw;">
+                <div class="elem_photo" v-for="(elem, index) in photoSrc" data-count={{index}}>
+                    <img @click="show_image_function(index)" :src="pathPhoto(index)" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="close_icon" onclick="show('photo_all_screen', 'none')">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24.58" height="24.282" viewBox="0 0 24.58 24.282">
+           <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(2.214 1.121)">
+               <path id="cross1" data-name="Контур 3"
+                     d="M19.875,21.979l-4.57-6.238-4.062-4.57L8.414,8.2,5.731,5.876,2.756,3.482-.943.435" fill="#fff"
+                     stroke="#fff" stroke-width="4"/>
+               <path id="cross2" data-name="Контур 1"
+                     d="M0,21l2.176-2.72,2.611-3.047,5.368-5.3L14.29,5.876l3.047-2.394L21.109.435" fill="#fff"
+                     stroke="#fff" stroke-width="4"/>
+           </g>
+       </svg>
+    </div>
+</div>

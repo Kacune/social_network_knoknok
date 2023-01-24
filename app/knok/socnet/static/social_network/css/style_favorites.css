@@ -1,0 +1,359 @@
+a{
+    text-decoration: none;
+}
+
+.result_search{
+    width: 75%;
+}
+
+.requests_bgc{
+    padding: 0.52vw;
+    padding-top: 0;
+    height: 30vh;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.main_result_search{
+    width: 100%;
+    height: 15.625vw;
+}
+
+.main_result_search__content{
+    height: 65%;
+    display: flex;
+    background-color: white;
+    padding: 1.04vw 0.52vw;
+}
+
+.main_result_search__content__avatar_block{
+    width: 30%;
+}
+.main_result_search__content__avatar{
+    width: 9.9vw;
+    height: 10.41vw;
+    background-color: #BFBFBF;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 1.04vw;
+}
+
+.main_result_search__content__avatar img{
+    height: 9.9vw;
+}
+
+.main_result_search__content__info__div_name h3{
+    font-size: 150%;
+    color: #206DB4;
+    margin: 0 0 0.4vw 0;
+}
+
+.main_result_search__content__info__div_name p{
+    margin: 0;
+    font-size: 110%;
+    color: #545454;
+}
+
+.main_result_search__content__info__div_name__status p{
+    font-size: 1.04vw;
+    margin-top: 3.90625vw;
+}
+.main_result_search__content__icons{
+    width: 10%;
+}
+
+.main_result_search__content__icons__elem{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.52vw;
+}
+
+.main_result_search__content__icons__elem img{
+    width: 2.08vw;
+}
+
+#videocamera{
+    height: 1.3vw;
+}
+
+.main_result_search__content__info{
+    width: 60%;
+}
+
+.main_result_search__button{
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.become_leader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8.3vw;
+    height: 1.5625vw;
+    color: white;
+    background-color: #EC95C7;
+    border-radius: 0.52vw;
+}
+
+.result_search__etc{
+    margin: 1.5625vw 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.requests_bgc__elem{
+    display: flex;
+    justify-content: center;
+    width: 11.45vw;
+    height: 11.45vw;
+    box-sizing: border-box;
+    margin-right: 1.5625vw;
+    margin-top: 0.7vw;
+}
+.requests_bgc__elem_etc_container{
+    width: 11.45vw;
+    height: 30vh;
+}
+
+
+.requests_bgc__elem_etc_container_photo{
+    position: relative;
+    background-color: #BFBFBF;
+    width: 11.45vw;
+    height: 9.6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.requests_bgc__elem_etc_container_photo .delete_favorite{
+    position: absolute;
+    top: 0.26vw;
+    right: 0.26vw;
+}
+
+.delete_favorite svg{
+    cursor: pointer;
+    width: 1.04vw;
+}
+
+.delete_favorite svg path{
+    stroke: red;
+}
+
+.requests_bgc__elem_etc_container_photo__photo{
+    width: 11.45vw;
+    height: 9.6vw;
+    object-fit: cover;
+}
+.requests_bgc__elem_etc_title{
+    background-color: #206DB4;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 0.52vw 0;
+    width: 11.45vw;
+    cursor: pointer;
+    font-size: 0.625vw;
+}
+
+.requests_bgc__elem_etc_title_name{
+    padding-left: 0.52vw;
+}
+
+.requests_bgc__elem_etc_title_age_city{
+    padding-right: 0.52vw;
+    font-size: 0.625vw ;
+}
+
+
+.country{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart{
+    position: absolute;
+    bottom: 0;
+    right: 1.04vw;
+}
+
+.yeys{
+    position: absolute;
+    bottom: 0;
+    left: 0.78125vw;
+}
+
+.photo_icon{
+    position: absolute;
+    top: 0.4vw;
+    left: 0.78125vw;
+}
+
+.video_icon{
+    position: absolute;
+    top: 0.4vw;
+    right: 0.89vw;
+}
+
+.enter_icon{
+    width: 1.3vw;
+    height: auto;
+    cursor: pointer;
+}
+
+#heart_icon{
+    width: 1.04vw;
+    height: 1.04vw;
+    cursor: pointer;
+}
+
+#videocamera_icon{
+    width: 1.5625vw;
+    height: 1.04vw;
+}
+
+.line_button_requests{
+    height: 2.8125vw;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0.67vw  0;
+    align-items: center;
+}
+
+.blue_button{
+    width: 5.46vw;
+    height: 1.9vw;
+    font-size: 0.625vw;
+    color: white;
+    background-color: #206DB4;
+    border-radius: 0.52vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.blue_button:hover{
+    background-color: #205AB2;
+}
+
+.line_title_block{
+    font-size: 0.625vw ;
+    color: #206DB4;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 0.78125vw;
+    padding-left: 0.78125vw;
+}
+
+.end_block_line{
+    height: 1.04vw;
+    margin: 0 0.52vw;
+    width: 50.78125vw;
+    border-bottom: 0.052vw solid #4583BD;
+}
+
+.pink_button_favorites{
+    width: 1.40625vw;
+    height: 1.40625vw;
+    border-radius: 0.26vw;
+    background-color: #EC95C7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.pink_button_favorites:hover{
+    background-color: #67BADE;
+}
+
+.pink_button_favorites img{
+    height: 1.04vw;
+}
+
+#height_less{
+    height: 0.78125vw;
+}
+
+.blue_button_favorites{
+    cursor: pointer;
+    width: 1.40625vw;
+    height: 1.40625vw;
+    border-radius: 0.26vw;
+    background-color: #206DB4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+}
+
+.blue_button_favorites:hover{
+    background-color: #205AB2;
+}
+
+.blue_button_favorites img{
+    width: 1.04vw;
+}
+
+.favorites_block{
+    padding: 0.67vw  0;
+    justify-content: flex-start;
+}
+
+.favorites_block div{
+    margin-right: 0.3125vw;
+}
+
+
+.nav_favorites{
+    padding: 0.78125vw 0.52vw;
+    display: flex;
+}
+
+.nav_favorites a{
+    text-decoration: none;
+}
+
+.button_nav_favorites:last-child{
+    border-right: none;
+    border-left: 0.052vw solid #205AB2;
+}
+
+.button_nav_favorites{
+    width: 10vw;
+    height: 2vw;
+    border-right: 0.052vw solid #205AB2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: .3s all ease-in-out;
+}
+
+.button_nav_favorites:hover{
+    background-color: #EDF5FB;
+    transition: .3s all ease-in-out;
+}
+
+.container.active{
+    display: flex;
+}
+
+.container{
+    display: none;
+    width: auto;
+}
+
+.button_nav_favorites.active {
+    border-bottom: 0.104vw solid #5490C6;
+}

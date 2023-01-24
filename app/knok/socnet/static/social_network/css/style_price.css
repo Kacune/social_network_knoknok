@@ -1,0 +1,136 @@
+.price_conteiner{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.price_block{
+    position: relative;
+    width: 10.4vw;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.price_block:hover{
+    background-color: #CFD9E0;
+    transition: all .3s ease-in-out;
+}
+
+.price_block:hover .price_user{
+    display: flex;
+    position: absolute;
+    top: 0.52vw ;
+    right: -17.1875vw;
+    z-index: 100;
+}
+
+.price_send_online{
+    color: white;
+}
+
+
+.price_icon_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10.4vw;
+    height: 10.4vw;
+}
+
+.price_icon{
+    width: 7.8125vw;
+}
+
+.price_cost{
+    display: flex;
+    width: 10.4vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.price_cost_text{
+    border-radius: 0.52vw ;
+    background-color: #206DB4;
+    width: 6.5vw;
+    height: 1.9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.price_user{
+    display: none;
+    width: 17.1875vw;
+    height: 8.85vw;
+    background-color: #EC95C7;
+    border-radius: 1.04vw;
+    font-size: 0.78125vw;
+}
+
+.price_send_avatar{
+    width: 4.47vw;
+    height: 5vw;
+    object-fit: cover;
+}
+
+.price_send{
+    margin-top: 1.04vw;
+}
+
+.price_send_user{
+    width: 6.25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price_date{
+    margin-top: 0.52vw ;
+    height: 1.04vw;
+    color: white;
+    display: flex;
+    font-size: 0.625vw;
+    justify-content: flex-end;
+}
+
+.price_first_name{
+    margin-top: 0.26vw;
+    font-weight: bold;
+    color: white;
+}
+
+.price_buttons_div{
+    display: flex;
+    justify-content: space-between;
+    width: 10.4vw;
+    height: 45%;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding-right: 0.52vw ;
+}
+
+.price_button{
+    border-radius: 0.36vw ;
+    background-color: #206DB4;
+    width: 4.6875vw;
+    height: 1.9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.78125vw;
+    text-align: center;
+    padding: 0.15625vw 0;
+    cursor: pointer;
+    transition: all .4s ease;
+ }
+
+ .price_button:hover{
+    background-color: #0e62af;
+    transition: all .4s ease;
+ }
+
+.price_age_city{
+    color: white;
+}

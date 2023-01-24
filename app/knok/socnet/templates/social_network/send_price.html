@@ -1,0 +1,32 @@
+<div class="send_price" :class="{active: active_send_price}" id="send_price">
+    <div class="send_price_elem" v-for="(elem, index) in price_objects_list" @click="active_confirm = true; which_price = index;">
+        <img class="send_price_img" :src="pathImgPrice(index)">
+        {% verbatim %}
+        <p>{{elem.cost}} KN</p>
+        {% endverbatim %}
+    </div>
+    <div id="close_send_price" @click="active_send_price=false;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24.58" height="24.282"
+             viewBox="0 0 24.58 24.282">
+            <g id="Сгруппировать_1" data-name="Сгруппировать 1"
+               transform="translate(2.214 1.121)">
+                <path id="cross1" data-name="Контур 3"
+                      d="M19.875,21.979l-4.57-6.238-4.062-4.57L8.414,8.2,5.731,5.876,2.756,3.482-.943.435"
+                      fill="#fff"
+                      stroke="#fff" stroke-width="4"/>
+                <path id="cross2" data-name="Контур 1"
+                      d="M0,21l2.176-2.72,2.611-3.047,5.368-5.3L14.29,5.876l3.047-2.394L21.109.435"
+                      fill="#fff"
+                      stroke="#fff" stroke-width="4"/>
+            </g>
+        </svg>
+    </div>
+    <div class="confirmation_window" :class="{active_confirm:active_confirm}">
+        <div><p>Вы уверены, что желаете отправить данный подарок?!</p>
+            <div class="confirmation_block_button">
+                <div class="confirm_button" @click="give_price()">Да</div>
+                <div class="confirm_button" @click="active_confirm = false;">Нет</div>
+            </div>
+        </div>
+    </div>
+</div>

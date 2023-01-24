@@ -1,0 +1,18 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_news.css'%}">
+{% endblock %}
+
+{% block content %}
+<div class="title_news_page">Новости сайта</div>
+<div class="content_news_page">
+    <div class="elem_content_news_page">
+        <div class="title_elem_content_news_page">Обновление V1.0</div>
+        <div class="description_elem_content_news_page">Данная социальная сеть находится на стадии
+            разработки. По всем вопросам обращаться на почту support@knoknok.ru.
+        </div>
+    </div>
+</div>
+{% endblock %}

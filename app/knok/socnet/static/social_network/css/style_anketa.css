@@ -1,0 +1,309 @@
+.search_anketa{
+    font-size: 0.85vw;
+    box-sizing: border-box;
+    margin-top: 0.26vw;
+    margin-bottom: 0.26vw;
+}
+
+.column_anketa{
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.line_anketa{
+    display: flex;
+    justify-content: space-between;
+}
+
+.line_param{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.26vw;
+}
+
+.title_line_param{
+    font-size: 0.85vw;
+    color: #545454;
+}
+
+.line_param select{
+    font-size: 0.85vw;
+    border: none;
+    outline: none;
+    background-color: white;
+    width: 9.375vw;
+    height: 1.5625vw;
+    border-radius: 0.4vw;
+    border: 0.052vw solid #205AB2;
+}
+
+.column_anketa textarea{
+    width: 21.6vw;
+    height: 5.2vw;
+    resize: none;
+}
+
+.none_flex{
+    display: block;
+}
+
+
+.title_line_anketa{
+    color: #206DB4;
+    font-size: 0.85vw;
+    font-weight: bold;
+}
+
+.content_param_anketa{
+    display: flex;
+    padding-top: 1.04vw;
+}
+.content_param_anketa_column{
+    width: 33%;
+}
+
+.content_param_anketa_column_line{
+    display: flex;
+    padding-bottom: 0.52vw;
+}
+
+.content_param_anketa_column_line label{
+    width: 1.3vw;
+    height: 1.3vw;
+    background-color: white;
+    border-radius: 0.4vw;
+    cursor: pointer;
+    margin-right: 0.26vw;
+    border: 0.052vw solid #205AB2;
+}
+
+.content_param_anketa_column_line input[type="checkbox"]{
+    display: none;
+}
+
+.line_etc{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding-right: 0.26vw;
+    padding-bottom: 0.26vw;
+    background-color: #EDF5FB;
+}
+
+.line_etc_div{
+    width: 34%;
+}
+
+.line_etc input[type="text"]{
+    color: #545454;
+    width: 80%;
+    height: 1.3vw;
+    border: none;
+    border-radius: 0.4vw;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 0.52vw;
+    font-size: 0.85vw;
+    border: 0.052vw solid #205AB2;
+}
+
+.line_etc input[type="submit"]{
+    width: 7.3vw;
+    height: 1.9vw;
+    background-color: #206DB4;
+    border: none;
+    border-radius: 0.52vw;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    transition: .4s;
+}
+
+.line_etc input[type="submit"]:hover{
+    background-color: #205AB2;
+}
+.line_etc img{
+    width: 1.3vw;
+    cursor: pointer;
+}
+
+.line_etc img:hover .title_nav_hide{
+    display: flex;
+    z-index: 9999;
+}
+
+.title_nav_hide{
+    display: none;
+    position: absolute;
+    width: 7.8125vw;
+    height: 1.5652vw;
+    background-color: rgba(0, 0, 0, 0.19);
+    bottom: -1.8vw;
+    left: -2.86vw;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.36vw ;
+    color: white;
+    font-size: 0.625vw;
+    z-index: 1000;
+}
+
+.title_my_anketa{
+    font-size: 0.9375vw;
+    font-weight: bold;
+    color: #206DB4;
+}
+
+
+.line_my_anketa{
+    display: flex;
+    padding: 0.78125vw 0;
+}
+
+.line_my_anketa.birthday input{
+    width: 11.2vw;
+    height: 1.5625vw;
+    border: none;
+    border-radius: 0.4vw;
+    outline: none;
+    background-color: white;
+    color: #2D76B9;
+    margin-right: 0.67vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.73vw;
+    border: 0.052vw solid #205AB2;
+}
+
+.birthday{
+}
+
+.column_my_anketa{
+    width: 50%;
+}
+
+.line_column_my_anketa{
+    box-sizing: border-box;
+    padding: 0.26vw 0.52vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.line_column_my_anketa select{
+    width: 8.3vw;
+    height: 1.4vw;
+    border: none;
+    border-radius: 0.52vw ;
+    outline: none;
+    background-color: white;
+    color: #2D76B9;
+    font-size: 0.78125vw;
+    border: 0.052vw solid #205AB2;
+}
+
+.line_column_my_anketa p{
+    color: #545454;
+    font-size: 0.85vw;
+}
+
+.elem_line_my_anketa{
+    margin-right: 1.3vw;
+}
+
+.title_line_my_anketa{
+    padding-bottom: 0.52vw;
+    color: #206DB4;
+    font-size: 0.9375vw;
+    font-weight: bold;
+}
+
+.elem_line_my_anketa input{
+    width: 11.2vw;
+    height: 1.5625vw;
+    border: none;
+    border-radius: 0.52vw;
+    outline: none;
+    color: #2D76B9;
+    box-sizing: border-box;
+    padding: 0 0.52vw;
+    border: 0.052vw solid #205AB2;
+}
+
+.elem_line_my_anketa select{
+    width: 8.59375vw;
+    border: none;
+    border-radius: 0.52vw ;
+    outline: none;
+    height: 1.5625vw;
+    color: #2D76B9;
+    border: 0.052vw solid #205AB2;
+}
+
+.elem_line_my_anketa_sex img{
+    height: 1.5625vw;
+    padding: 0 0.52vw;
+    cursor: pointer;
+}
+
+.line_description_my_anketa p{
+    color: #545454;
+    font-size: 0.85vw;
+    padding-bottom: 0.26vw;
+}
+
+.line_description_my_anketa{
+    padding: 0.26vw 0.52vw;
+}
+
+.line_description_my_anketa textarea{
+    width: 25vw;
+    height: 6.25vw;
+    resize: none;
+}
+
+.any_anketa{
+    background-color: #EDF5FB;
+    height: 0;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+}
+
+.any_anketa.click{
+    height: 27vw;
+    padding: 0.78125vw;
+    transition: all .4s ease-in-out;
+}
+
+.my_anketa{
+    margin-top: 0.26vw;
+    background-color: #EDF5FB;
+    padding: 0.78125vw;
+    height: 80vh;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.none{
+    display: none;
+}
+
+.close_anketa{
+    position: absolute;
+    top: 0.26vw;
+    right: 0.26vw;
+}
+
+.close_anketa svg path{
+    stroke: red;
+}
+
+.close_anketa svg{
+    cursor: pointer;
+}
+
+.select_sex{
+    background-color: #CFD9E0;
+}

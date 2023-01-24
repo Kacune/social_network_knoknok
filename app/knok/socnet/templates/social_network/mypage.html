@@ -1,0 +1,156 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_mypage.css' %}">
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_photo_all_screen.css' %}">
+{% endblock %}
+
+
+{% block content %}
+{% verbatim %}
+<div class="top_content" id="main_block_mypage">
+    <div class="avatar_block">
+        <div class="avatar_block__avatar">
+            <img id="avatar_mypage" :src="pathAvatar()" alt="">
+            <label for="change_avatar" class="change_avatar">Поменять аватарку</label>
+            <input type="file" id="change_avatar" accept="image/*" @change="editImage">
+        </div>
+        <div class="avatar_block__info">
+            <div class="avatar_block__info__fio">
+                {{user.first_name}} {{user.last_name}}
+            </div>
+            <div class="avatar_block__info__age_city">
+                {{ user.age }}, {{ user.city }}
+            </div>
+        </div>
+    </div>
+
+    <div class="block_characteristics" :class="{click: clicked}" id="block_characteristics">
+        <div class="description_me">
+            <p class="title_description_me">Коротко обо мне:</p>
+            <p class="decription_info">{{user.bio}}</p>
+        </div>
+        <div class="all_characteristics" :class="{click: clicked, noclick: !clicked}" id="all_characteristics">
+            <div class="line_characteristic">
+                <p class="title_characteristic">Рост:</p>
+                <p class="value_characteristic">{{characteristics.height}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Вес:</p>
+                <p class="value_characteristic">{{characteristics.weight}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Курение:</p>
+                <p class="value_characteristic">{{characteristics.smoke}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Алкоголь:</p>
+                <p class="value_characteristic">{{characteristics.alcohol}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Телосложение:</p>
+                <p class="value_characteristic">{{characteristics.body_type}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">На теле:</p>
+                <p class="value_characteristic">{{characteristics.marks}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Семейное положение:</p>
+                <p class="value_characteristic">{{characteristics.marital_status}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Дети:</p>
+                <p class="value_characteristic">{{characteristics.child}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Место для встреч:</p>
+                <p class="value_characteristic">{{characteristics.meeting_place}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Сфера работы:</p>
+                <p class="value_characteristic">{{characteristics.work}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Проживание:</p>
+                <p class="value_characteristic">{{characteristics.accommodation}}</p>
+            </div>
+            <div class="line_characteristic">
+                <p class="title_characteristic">Спонсорство:</p>
+                <p class="value_characteristic">{{characteristics.sponsorship}}</p>
+            </div>
+        </div>
+        <div class="button_show_all" id="button_show_all" @click="clicked = !clicked">Показать все</div>
+        <div class="line_button">
+              <a href="my_suggestions">
+                  <div class="block_price__button"><p>МОИ ПРЕДЛОЖЕНИЯ</p>
+                      <span>{{my_suggestons_count}}</span>
+                  </div>
+              </a>
+            <a href="correct_anketa">
+                <div class="block_price__button"><p>РЕДАКТИРОВАТЬ АНКЕТУ</p></div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="bot_content" id="block_photo_mypage">
+    <div class="func_line">
+        <div class="func_line_media">
+            <div class="func_line_media__title">
+                <div class="func_line_media__title_name">Мои фотографии</div>
+                <div class="count_media">{{count_photo_all}}</div>
+            </div>
+            <div class="transfer_block">
+                <div class="paid_free">
+                    <div class="free_media">
+                        <div class="title_media">бесплатные</div>
+                        <div class="count_media">{{count_photo_free}}</div>
+                    </div>
+                </div>
+                <div class="paid_media">
+                    <div class="title_media">платные</div>
+                    <div class="count_media">{{count_photo_paid}}</div>
+                </div>
+            </div>
+            <div class="transfer_block_expand">
+                <svg xmlns="http://www.w3.org/2000/svg" width="71.12" height="65.111" viewBox="0 0 71.12 65.111">
+                    <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(-4.661 -1.694)">
+                        <path id="expand1" data-name="expand1"
+                              d="M30.041,26.933l-20.1,1.036H2.9l3.522,1.047V47.443L5.179,67.332a131.542,131.542,0,0,1,20.3-2.486,124.837,124.837,0,0,1,20.1,1.237l.829-9.317-.829-18.232v-11.6Z"
+                              transform="translate(2.33 -3.033)" fill="none" stroke="#3c63ad" stroke-width="4"/>
+                        <path id="expand2" data-name="expand2"
+                              d="M29.419,27.14l.829-7.251-.829-9.737,7.246-.1,9.328-.732,17.2-.829,6.008.829V24.24l1.243,14.3L69.2,48.894l-6.008-1.243h-17.2"
+                              transform="translate(3.33 -4.794)" fill="none" stroke="#3c63ad" stroke-width="4"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="button_add">
+                <a href="add_photo">
+                    <div class="button_add__button">ДОБАВИТЬ ФОТО</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="photo_block_main">
+        <div class="photo_block">
+            <div v-for="(photo, index) in photos" class="photo_block__elem" @click="open_slider(index);">
+                <img :src="pathPhoto(index)">
+            </div>
+        </div>
+    </div>
+</div>
+{% endverbatim %}
+
+
+<div class="line_hide">
+    <img src="{% static 'social_network/icons/mypage/hide_triangle.png' %}">
+</div>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/mypage.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/photo_all_screen.js' %}"></script>
+{% endblock %}
+{% block etc %}
+    {% include './photo_all_screen.html' %}
+{% endblock %}

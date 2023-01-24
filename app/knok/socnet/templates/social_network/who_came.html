@@ -1,0 +1,33 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_favorites.css'%}">
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/script_setting.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="top_content">
+    <div class="line_title_block">сегодня</div>
+    <div class="requests_bgc">
+        {% for elem in list_came %}
+        <div class="requests_bgc__elem">
+            <div class="requests_bgc__elem_etc_container">
+                <div class="requests_bgc__elem_etc_container_photo">
+                    <img class="requests_bgc__elem_etc_container_photo__photo" src="media/{{elem.avatar}}" alt="">
+                </div>
+                <div class="requests_bgc__elem_etc_title">
+                    <div class="requests_bgc__elem_etc_title_name">{{elem.first_name}}</div>
+                    <div class="requests_bgc__elem_etc_title_age_city">{{elem.last_name}}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="end_block_line"></div>
+</div>
+{% endblock %}

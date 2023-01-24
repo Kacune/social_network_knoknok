@@ -1,0 +1,98 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_add_photo.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_photo_all_screen.css' %}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/add_photo.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/photo_all_screen.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="top_content">
+    <div class="line_title title_main">ДОБАВИТЬ ФОТО</div>
+    {% verbatim %}
+    <form class="top_content_content" id="add_photo_form" @submit.prevent="getPhotos">
+        <div class="photo_description">
+            <div class="photo_description_flex" action="add_photo" method="POST">
+                <label class="select_photo">
+                    Загрузить фото
+                </label>
+                <label for="upload_photo_input" class="select_photo_upper">
+                </label>
+                <img src="#" id="upload_photo_img" alt="Image">
+                <input type="file" multiple @change="editImage" accept="image/*" id="upload_photo_input">
+                <div class="discription_block">
+                    <div class="line_title">ДОБАВИТЬ ОПИСАНИЕ</div>
+                    <textarea v-model="description"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="func_block">
+            <div   v-if="count_photo_paid < 5" class="line_title">СТОИМОСТЬ ФОТОГРАФИИ</div>
+            <input v-if="count_photo_paid  < 5" type="text" v-model="cost">
+            <div   v-if="count_photo_paid  < 5" class="line_title">лимит платных фотографий</div>
+            <div   v-if="count_photo_paid  < 5" class="line_title">{{count_photo_paid}} из 5</div>
+            <div class="line_button">
+                <input type="submit" class="button_func_block" value="ОПУБЛИКОВАТЬ">
+            </div>
+        </div>
+    </form>
+    {% endverbatim %}
+</div>
+<div class="bot_content" id="photo_block">
+    {% verbatim %}
+    <div class="func_line">
+        <div class="func_line_media">
+            <div class="func_line_media__title">
+                <div class="func_line_media__title_name">МОИ ФОТОГРАФИИ</div>
+                <div class="count_media">{{count_photo_all}}</div>
+            </div>
+            <div class="transfer_block">
+                <div class="paid_free">
+                    <div class="free_media">
+                        <div class="title_media">бесплатные</div>
+                        <div class="count_media">{{count_photo_free}}</div>
+                </div>
+                <div class="paid_media">
+                    <div class="title_media">платные</div>
+                    <div class="count_media">{{count_photo_paid}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="transfer_block_expand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="71.12" height="65.111" viewBox="0 0 71.12 65.111">
+                <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(-4.661 -1.694)">
+                    <path id="expand1" data-name="expand1"
+                          d="M30.041,26.933l-20.1,1.036H2.9l3.522,1.047V47.443L5.179,67.332a131.542,131.542,0,0,1,20.3-2.486,124.837,124.837,0,0,1,20.1,1.237l.829-9.317-.829-18.232v-11.6Z"
+                          transform="translate(2.33 -3.033)" fill="none" stroke="#3c63ad" stroke-width="4"/>
+                    <path id="expand2" data-name="expand2"
+                          d="M29.419,27.14l.829-7.251-.829-9.737,7.246-.1,9.328-.732,17.2-.829,6.008.829V24.24l1.243,14.3L69.2,48.894l-6.008-1.243h-17.2"
+                          transform="translate(3.33 -4.794)" fill="none" stroke="#3c63ad" stroke-width="4"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="photo_block_main">
+    <div class="photo_block">
+            <div v-for="(photo, index) in photos" class="photo_block__elem" @click="open_slider(index);">
+                <img :src="pathPhoto(index)" decoding="async">
+            </div>
+        {% endverbatim %}
+    </div>
+</div>
+
+<div class="line_hide">
+    <img src="icons/hide_triangle.png">
+</div>
+</div>
+{% endblock %}
+
+{% block etc %}
+    {% include './photo_all_screen.html' %}
+{% endblock %}

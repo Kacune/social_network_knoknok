@@ -1,0 +1,11 @@
+<div id="confirmation_window_favorite" class="confirmation_window" :class="{active_confirm : isActive}">
+    <div>
+        {% verbatim %}
+        <p>{{text_confirmation}}</p>
+        <div class="confirmation_block_button">
+            <div class="confirm_button" @click="yes_delete()">Да</div>
+            <div class="confirm_button" @click="deactivate_window()">Нет</div>
+        </div>
+        {% endverbatim %}
+    </div>
+</div>

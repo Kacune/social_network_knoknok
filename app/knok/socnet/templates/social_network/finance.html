@@ -1,0 +1,330 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_finance.css'%}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/script_setting.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="navigation_finance">
+    <a class="button_navigation_finance js-tab-triger active" data-tab="1" href="#">
+        <div>
+            БАНКОВСКАЯ КАРТА
+        </div>
+    </a>
+    <a class="button_navigation_finance js-tab-triger" data-tab="2" href="#">
+        <div>
+            СБЕР ОНЛАЙН
+        </div>
+    </a>
+    <a class="button_navigation_finance js-tab-triger" data-tab="3" href="#">
+        <div>
+            ТЕЛЕФОН(SMS)
+        </div>
+    </a>
+    <a class="button_navigation_finance js-tab-triger" data-tab="4" href="#">
+        <div>
+            ДРУГИЕ СПОСОБЫ
+        </div>
+    </a>
+    <a class="button_navigation_finance js-tab-triger" data-tab="5" href="#">
+        <div>
+            ИСТОРИЯ ПЛАТЕЖЕЙ
+        </div>
+    </a>
+</div>
+<div class="balance_finance">
+    <div class="title_balance_finance">
+        Пополнить счет на Kn
+    </div>
+    <div class="score_balance_finance">
+        <div class="title_score_balance_finance">
+            Ваш баланс
+        </div>
+        <div class="numbers_score_balance_finance">
+            <? echo $score;?> Kn
+        </div>
+    </div>
+</div>
+<div class="content_finance">
+    <div class="container js-tab-content active" data-tab="1">
+        <div class="top_content_finance">
+            <div class="half_window">
+                <div class="row_half_window">
+                    <div class="main_title">
+                        <?echo $name_button[0];?>
+                    </div>
+                </div>
+                <div class="row_half_window">
+                    <div class="column_row_half_window">
+                        чек будет отправлен на
+                    </div>
+                    <div class="column_row_half_window">
+                        <input type="text" placeholder="qqqq@mail.ru">
+                        <div class="a_column_row_half_window">
+                            изменить
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="half_window">
+                <div class="row_half_window">
+                    <div class="column_row_half_window">
+                        <select name="" id="">
+                            <option value="">Введите сумму</option>
+                        </select>
+                    </div>
+                    <div class="column_row_half_window">
+                        <div class="block_column_row_half_window">
+                            <div class="half_column_row_half_window" id="half_column_row_half_window_count">
+                                <input type="text">
+                            </div>
+                            <div class="half_column_row_half_window">
+                                <div class="title_half_column_row_half_window">
+                                    Kn
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_content_finance">
+            <div class="half_window">
+                <div class="card_requisites">
+                    <div class="center_class">
+                        <div class="name_requisites">
+                            номер карты
+                        </div>
+                        <div class="number_cards">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                        </div>
+                        <div class="name_requisites">
+                            Имя и фамилия
+                        </div>
+                        <div class="else_requests">
+                            <input type="text" name="">
+                            <div class="date_requests">
+                                <input type="text" placeholder="MM">
+                                /
+                                <input type="text" placeholder="YY">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="half_window">
+                <div class="card_requests_cvv">
+                    <div class="cvv_input">
+                        <input type="text">
+                        <p>Код безопасности карты CVV/CVC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div_line_button">
+            <div class="button_send">
+                ОПЛАТИТЬ
+            </div>
+        </div>
+    </div>
+    <div class="container js-tab-content" data-tab="2">
+        <div class="grey_row">
+            <div class="half_window">
+                <div class="row_half_window">
+                    <div class="column_row_half_window">
+                        чек будет отправлен на
+                    </div>
+                    <div class="column_row_half_window">
+                        <input type="text" placeholder="qqqq@mail.ru">
+                        <div class="a_column_row_half_window">
+                            изменить
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_container">
+            <div class="half_window">
+                <div class="line_half_window">
+                    <div class="price_card">
+                        <div class="check">
+
+                        </div>
+                        <div class="cost_price_card_KN">
+                            5 Kn
+                        </div>
+                    </div>
+                    <div class="cost_price_card_RUB">
+                        <p>за 100 RUB</p>
+                    </div>
+                </div>
+                <div class="line_half_window">
+                    <div class="price_card">
+                        <div class="check">
+
+                        </div>
+                        <div class="cost_price_card_KN">
+                            10 Kn
+                        </div>
+                    </div>
+                    <div class="cost_price_card_RUB">
+                        <p>за 100 RUB</p>
+                    </div>
+                </div>
+                <div class="line_half_window">
+                    <div class="price_card">
+                        <div class="check">
+
+                        </div>
+                        <div class="cost_price_card_KN">
+                            20 Kn
+                        </div>
+                    </div>
+                    <div class="cost_price_card_RUB">
+                        <p>за 100 RUB</p>
+                    </div>
+                </div>
+                <div class="line_half_window">
+                    <div class="price_card">
+                        <div class="check">
+
+                        </div>
+                        <div class="cost_price_card_KN">
+                            <input type="text"> Kn
+                        </div>
+                    </div>
+                    <div class="cost_price_card_RUB">
+                        <input type="text" placeholder="другая сумма RUB">
+                    </div>
+                </div>
+            </div>
+            <div class="half_window">
+                <div class="line_half_window">
+                    <p class="width400">Введите номер, подключенный к сервису "Мобильный банк" Сбер:</p>
+                </div>
+                <div class="line_half_window">
+                    <div class="line_ad_half_window">
+                        <select name="">
+                            <option value="">Россия(+7)</option>
+                        </select>
+                        <input type="text" placeholder="+7 ___ ___ __ __">
+                    </div>
+                </div>
+                <div class="line_half_window">
+                    <p class="width400">Вам придет сообщение от Сбер с номера 900. Следуйте инструкции, полученной в
+                        сообщении.</p>
+                </div>
+            </div>
+        </div>
+        <div class="div_line_button">
+            <div class="button_send">
+                ОПЛАТИТЬ
+            </div>
+        </div>
+        <div class="div_line_button">
+            <p class="width400">Нажимая кнопку "Оплатить" вы соглашаетесь с офертой сервиса Яндекс.Деньги</p>
+        </div>
+    </div>
+    <div class="container js-tab-content" data-tab="3">
+        <div class="grey_row">
+            <div class="half_window">
+                <div class="row_half_window">
+                    <div class="column_row_half_window">
+                        чек будет отправлен на
+                    </div>
+                    <div class="column_row_half_window">
+                        <input type="text" placeholder="qqqq@mail.ru">
+                        <div class="a_column_row_half_window">
+                            изменить
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_container">
+            <div class="half_window">
+                <div class="line_half_window">
+                    <div class="price_card">
+                        <div class="check">
+
+                        </div>
+                        <div class="cost_price_card_KN">
+                            0,5 Kn
+                        </div>
+                    </div>
+                    <div class="cost_price_card_RUB">
+                        <p>за 12 RUB</p>
+                    </div>
+                </div>
+                <div class="line_half_window">
+                    <div class="price_card">
+                        <div class="check">
+
+                        </div>
+                        <div class="cost_price_card_KN">
+                            2 Kn
+                        </div>
+                    </div>
+                    <div class="cost_price_card_RUB">
+                        <p>за 50 RUB</p>
+                    </div>
+                </div>
+                <div class="line_half_window">
+                    <div class="price_card">
+                        <div class="check">
+
+                        </div>
+                        <div class="cost_price_card_KN">
+                            7 Kn
+                        </div>
+                    </div>
+                    <div class="cost_price_card_RUB">
+                        <p>за 200 RUB</p>
+                    </div>
+                </div>
+            </div>
+            <div class="half_window">
+                <div class="line_half_window">
+                    <p class="width400">Введите телефонный номер:</p>
+                </div>
+                <div class="line_half_window">
+                    <div class="line_ad_half_window">
+                        <select name="">
+                            <option value="">Россия(+7)</option>
+                        </select>
+                        <input type="text" placeholder="+7 ___ ___ __ __">
+                    </div>
+                </div>
+                <div class="line_half_window">
+                    <p class="width400">Для завершения покупки, следуйте инструкции, полученной в SMS сообщении</p>
+                </div>
+            </div>
+        </div>
+        <div class="div_line_button">
+            <div class="button_send">
+                ОПЛАТИТЬ
+            </div>
+        </div>
+        <div class="div_line_button">
+            <p class="width400">Нажимая кнопку "Оплатить" вы соглашаетесь с офертой сервиса Яндекс.Деньги</p>
+        </div>
+        <div class="save_data_pay">
+
+        </div>
+    </div>
+    <div class="container js-tab-content" data-tab="4">
+
+    </div>
+    <div class="container js-tab-content" data-tab="5">
+
+    </div>
+</div>
+{% endblock %}

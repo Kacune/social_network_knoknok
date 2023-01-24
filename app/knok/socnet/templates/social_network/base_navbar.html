@@ -1,0 +1,86 @@
+{% load static %}
+<nav class="navbar" id="navbar">
+   <div class="logo_search">
+      <div class="logo_search__container">
+         <a href="/mypage">
+            <img class="logo" src="{% static 'social_network/icons/navbar/logo_icon.png' %}" alt="">
+         </a>
+
+         <a class="a_search" href="search">
+            <div class="div_search {{search}}">
+               <img id="search_icon" src="{% static 'social_network/icons/navbar/search_icon.png' %}" alt="">
+            </div>
+            <div class="title_nav">Поиск людей</div>
+         </a>
+      </div>
+
+   </div>
+   <div class="nav_button">
+      <div class="nav_button__container" id="myTopnav">
+         <a href="/messages">
+            <div class="block_icon {{messages}}" id="mail">
+               <img class="icon" src="{% static 'social_network/icons/navbar/mail_icon.png' %}" alt="">
+            </div>
+            <div class="title_nav">Мои сообщения</div>
+         </a>
+
+         <a href="/finance">
+            <div class="block_icon {{finance}}" id="money">
+               <img class="icon" src="{% static 'social_network/icons/navbar/finance_icon.png' %}" alt="">
+               <span>{% verbatim %}{{wallet_sum}}{% endverbatim %}</span>
+            </div>
+            <div class="title_nav" id="title_nav_finance">Мои финансы и платежи</div>
+         </a>
+
+         <a href="/mypage">
+            <div class="block_icon {{mypage}}" id="mypage">
+               <img class="icon" src="{% static 'social_network/icons/navbar/mypage_icon.png' %}" alt="">
+            </div>
+            <div class="title_nav">Моя страница</div>
+         </a>
+
+         <a href="/setting">
+            <div class="block_icon {{setting}}" id="setting">
+               <img class="icon" src="{% static 'social_network/icons/navbar/setting_icon.png' %}" alt="">
+            </div>
+            <div class="title_nav">Мои настройки</div>
+         </a>
+
+         <a href="/add_advirsting">
+            <div class="block_icon {{add_advirsting}}" id="news">
+               <img class="icon" src="{% static 'social_network/icons/navbar/adversting_icon.png' %}" alt="">
+            </div>
+            <div class="title_nav">Разместить рекламу</div>
+         </a>
+
+         <a href="/news">
+            <div class="block_icon {{news}}" id="tv">
+               <img class="icon" src="{% static 'social_network/icons/navbar/news_icon.png' %}" alt="">
+            </div>
+            <div class="title_nav">Новости сайта</div>
+         </a>
+
+         <a onclick="show('help', 'flex');">
+            <div class="block_icon {{support}}" id="suggestion">
+               <img class="icon" src="{% static 'social_network/icons/navbar/help_icon.png' %}" alt="">
+            </div>
+            <div class="title_nav">Помощь</div>
+         </a>
+
+         <a href="#">
+            <div class="block_icon" id="add">
+               <img style="border: 0.104vw solid #E0E0E0; border-radius: 100%;" class="icon"
+                    :src="path_avatar_navbar()"
+                    alt="">
+            </div>
+            <div class="title_nav" @click="logout()">Выход</div>
+         </a>
+
+         <a href="#">
+            <div id="menu" class="block_icon">&#9776;</div>
+            <div class="title_nav">Прочее</div>
+         </a>
+
+      </div>
+   </div>
+</nav>

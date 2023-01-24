@@ -1,0 +1,63 @@
+{% load static %}
+<div class="one_suggest main_suggest">
+    <div class="one_suggest_main">
+        <div class="avatar_suggest">
+            <img class="avatar_photo_suggest" src="pathAvatar(suggest)">
+            <img v-if="suggest.fire_suggestion" class="fire_suggest_img"
+                                                      src="{% static 'social_network/icons/suggest/fire.png' %}">
+        </div>
+        <div class="info_man_suggest">
+            <div class="fio_suggest">{{suggest.first_name}} {{elem.last_name}}</div>
+            <div class="status_suggest"> {{suggest.spend}}</div>
+            <div class="flex_block">
+                <div class="thema_suggest_suggest">Тема:&nbsp;<p>{{suggest.theme}}</p></div>
+            </div>
+            <div class="lorem">
+                {{suggest.description}}
+            </div>
+        </div>
+        <div class="flex-end_func_one_suggest">
+            <div class="func_one_suggest">
+                <div class="title_func_one_suggest">предложение актуально до <br>
+                    <p>{{suggest.duration}}</p></div>
+                <div class="write_mail_suggestion_main button_one_suggest _big_button"
+                     onclick="show('write_mail_div', 'float')">написать сообщение
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="one_suggest_write_mail">
+        <textarea id="textarea_suggest" placeholder="Напишите сообщение"></textarea>
+        <div class="func_one_suggest">
+            <div class="button_line">
+                <div class="block_button_main">
+                    <div class="block_button_main_center">
+                        <div class="block_button_main_line">
+                            <div class="block_button_main_elem" >
+                                <img src="{% static 'social_network/icons/suggest/price_icon.png' %}" alt="">
+                                <p class="title">Отправить подарок</p>
+                            </div>
+                            <div class="block_button_main_elem" @click="createFavorite()">
+                                <img src="{% static 'social_network/icons/suggest/crown.png' %}" alt="">
+                                <p class="title">Добавить в избранное</p>
+                            </div>
+                        </div>
+                        <div class="block_button_main_line">
+                            <div class="block_button_main_elem">
+                                <img class="money_icon" src="{% static 'social_network/icons/suggest/smile.png' %}"
+                                     alt="">
+                                <p class="title">Подмигнуть</p>
+                            </div>
+                            <div class="block_button_main_elem" @click="send_kn(user_id)">
+                                <img class="money_icon" src="{% static 'social_network/icons/suggest/KN.png' %}" alt="">
+                                <p class="title">Отправить KN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="send_mail_suggest_main button_suggest">отправить</div>
+            </div>
+        </div>
+    </div>
+</div>

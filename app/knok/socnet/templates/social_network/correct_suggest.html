@@ -1,0 +1,49 @@
+{% load static %}
+<div class="main_content_suggest" v-bind:class="{main_content_correct_flex: isActive}" id="correct_suggest">
+    <div class="block_suggest">
+        <div class="top_block_suggest">
+            <div class="back_button">
+                <h1 style="display: flex; justify-content: center; color: white;">Размещение предложения
+                    <img class="suggestion_page_img" src="{% static 'social_network/icons/navbar2/suggestions_icon.png' %}" alt="">
+                </h1>
+                <a href="" @click="isActive = false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24.58" height="24.282" viewBox="0 0 24.58 24.282">
+                        <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(2.214 1.121)">
+                            <path id="cross1" data-name="Контур 3"
+                                  d="M19.875,21.979l-4.57-6.238-4.062-4.57L8.414,8.2,5.731,5.876,2.756,3.482-.943.435"
+                                  fill="#fff" stroke="#fff" stroke-width="4"/>
+                            <path id="cross2" data-name="Контур 1"
+                                  d="M0,21l2.176-2.72,2.611-3.047,5.368-5.3L14.29,5.876l3.047-2.394L21.109.435"
+                                  fill="#fff" stroke="#fff" stroke-width="4"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <form action="mypage" @submit.prevent="createSuggest">
+            {% csrf_token %}
+            <div class="content_block_suggest">
+                <div class="theme">
+                    <select name="theme" type="text" placeholder="Укажите тему:" v-model="theme">
+                        {% verbatim %}
+                            <option v-for="theme in themes" :value="theme.id" :key="theme.id">{{theme.name}}</option>
+                            <!--<option v-else  v-if="theme.id!=sel_theme" :selected="{selected: theme.id == sel_theme}" :value="theme.name" :key="theme.id">{{theme.name}}</option>-->
+                        {% endverbatim %}
+                    </select>
+                    <input name="duration" type="text" placeholder="Укажите дату мероприятия:" onfocus="(this.type='date')"
+                           style="width: 18.22vw;" v-model="suggest.duration">
+                </div>
+            </div>
+            <div class="content_block_suggest">
+                <div class="content_suggest">
+                    <textarea name="description" placeholder="Краткое описание мероприятия" v-model="suggest.description"></textarea>
+                </div>
+            </div>
+            <div class="content_block_suggest">
+                <div class="button_line">
+                    <input type="submit" class="button_suggest"  value="разместить">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+.confirmation_window{
+    position: fixed;
+    top: 15vw;
+    left: 37vw;
+    width: 20vw;
+    height: 10vw;
+    background-color: white;
+    border: 0.052vw solid #206DB4;
+    border-radius: 1.3vw;
+    display: none   ;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+
+.confirmation_window.active_confirm{
+    display: flex;
+}
+
+
+.confirmation_window p{
+    margin: 0.52vw  0 1.04vw 0;
+    text-align: center;
+}
+
+.confirmation_block_button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 2.08vw ;
+}
+
+.confirm_button{
+    width: 5.2vw ;
+    height: 1.9vw ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #206DB4;
+    transition: all .4s ease;
+    border-radius: 0.36vw ;
+    cursor: pointer;
+}
+
+.confirm_button:hover{
+    background-color: #1F4FB9;
+    transition: all .4s ease;
+}

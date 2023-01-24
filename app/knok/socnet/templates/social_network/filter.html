@@ -1,0 +1,87 @@
+{% load static %}
+<div class="filter_block" id="filter_block">
+    <div class="filter_block_line">
+        <div class="filter_block_select">
+            <p>Укажите страну</p>
+            {% verbatim %}
+            <select>
+                <option v-for="country in countries">{{ country }}</option>
+            </select>
+            {% endverbatim %}
+        </div>
+        <div class="filter_block_select">
+            <p>Укажите населенный пункт</p>
+            {% verbatim %}
+            <select>
+                <option v-for="city in cities">{{ city }}</option>
+            </select>
+            {% endverbatim %}
+        </div>
+        <div class="filter_block_select">
+            <p>Укажите тему</p>
+            <select>
+                {% for elem in themes %}
+                <option>{{elem.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="filter_block_sex_items">
+            <p>Укажите пол</p>
+            <div class="gender_block">
+                <div id="male" class="filter_block_sex_elem_div">
+                    <img class="filter_block_sex_elem" src="{% static 'social_network/icons/search/male.png' %}" alt="">
+                </div>
+                <div id="female" class="filter_block_sex_elem_div">
+                    <img class="filter_block_sex_elem" src="{% static 'social_network/icons/search/female.png' %}"
+                         alt="">
+                </div>
+                <div id="para" class="filter_block_sex_elem_div">
+                    <img class="filter_block_sex_elem" src="{% static 'social_network/icons/search/para.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="filter_block_age">
+            <p>Укажите возраст</p>
+            {% verbatim %}
+            <div class="age_block" id="age_block">
+                <select>
+                    <option v-for="age in list_age" value="">{{ age }}</option>
+
+                </select>
+                <select>
+                    <option v-for="age in list_age" value="">{{ age }}</option>
+                </select>
+            </div>
+            {% endverbatim %}
+        </div>
+    </div>
+    <div class="filter_block_line">
+        <div class="fire_suggest_form">
+            <div class="filter_block_fire">
+                <input name="fire" id="fire_input" type="checkbox">
+                <label for="fire_input">✔</label>
+                <p>Только горящие предложения</p>
+                <img src="{% static 'social_network/icons/suggest/fire.png' %}">
+            </div>
+        </div>
+        <div class="filter_block_date">
+            <input name="duration" type="text" placeholder="Укажите дату мероприятия:" onfocus="(this.type='date')">
+        </div>
+        <div class="button_filter">
+            применить
+        </div>
+        <div class="button_filter">
+            отменить
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24.58" height="24.282" viewBox="0 0 24.58 24.282">
+            <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(2.214 1.121)">
+                <path id="cross1" data-name="Контур 3"
+                      d="M19.875,21.979l-4.57-6.238-4.062-4.57L8.414,8.2,5.731,5.876,2.756,3.482-.943.435" fill="#fff"
+                      stroke="#fff" stroke-width="4"/>
+                <path id="cross2" data-name="Контур 1"
+                      d="M0,21l2.176-2.72,2.611-3.047,5.368-5.3L14.29,5.876l3.047-2.394L21.109.435" fill="#fff"
+                      stroke="#fff" stroke-width="4"/>
+            </g>
+        </svg>
+    </div>
+</div>

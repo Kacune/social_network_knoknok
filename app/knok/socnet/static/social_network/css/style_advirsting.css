@@ -1,0 +1,246 @@
+.top_content_advirsting{
+    margin-top: 0.78125vw;
+    display: flex;
+}
+
+.title_block{
+    padding: 0.52vw  0 0.26vw 0;
+    font-size: 0.57vw;
+    color: #206DB4;
+}
+
+.text_block{
+    font-size: 0.57vw;
+}
+
+.column_420{
+    width: 45vw;
+}
+
+.column{
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding: 0 1.5625vw 1.5625vw 1.5625vw;
+}
+
+.ul_block{
+    font-size: 0.57vw;
+}
+
+.banner_200{
+    width: 12.5vw;
+    height: 10.4vw;
+    background-color: #E0E0E0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.banner_400{
+    width: 12.5vw;
+    height: 20.8vw;
+    background-color: #E0E0E0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.banner_400 input[type="file"]{
+    display: none;
+}
+
+.elem_column_banner_title{
+    width: 12.5vw;
+    height: 20.8vw;
+    padding: 9.375vw 2.08vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.elem_column_banner{
+    font-size: 0.85vw;
+    padding: 0 1.3vw;
+}
+
+.elem_column_banner_button{
+    margin: 0.52vw  0;
+    height: 2.86vw;
+    width: 12.5vw;
+    background-color: #2D76B9;
+    border-radius: 0.52vw ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.elem_column_banner_button:hover{
+    background-color: #1F4FB9;
+}
+
+.elem_column_banner_input input{
+    margin-top: 0.52vw;
+    height: 1.45vw;
+    width: 12.5vw;
+    border: none;
+    border-radius: 0.4vw;
+    background-color: #EDF5FB;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 0.52vw;
+    color: #206DB4;
+    font-size: 0.85vw;
+    border: 0.052vw solid #205AB2;
+}
+
+
+.title_block_bot{
+    font-size: 0.625vw;
+    color: #206DB4;
+}
+
+.stroke_content{
+    display: flex;
+    padding-top: 0.52vw;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.stroke_content select{
+    width: 8.33vw;
+    height: 1.45vw;
+    margin-right: 2.6vw;
+    border: none;
+    border-radius: 0.4vw;
+    background-color: #EDF5FB;
+    outline: none;
+    color: #206DB4;
+    border: 0.052vw solid #205AB2;
+    font-size: 0.85vw;
+}
+
+#paid_adv{
+    position: absolute;
+    right: 3.64vw;
+    height: 1.9vw;
+    width: 6.25vw;
+    border-radius: 0.36vw ;
+}
+
+.none_flex{
+    display: block;
+}
+
+.one_stroke{
+    display: flex;
+    align-items: center;
+    padding-top: 0.52vw ;
+}
+
+.title_one_stroke{
+    font-size: 0.85vw;
+    color: #545454;
+    width: 14.0625vw;
+}
+
+.stroke_content select option{
+    color: #206DB4;
+    font-size: 0.85vw;
+}
+
+.one_stroke select{
+    background-color: white;
+}
+
+.one_stroke input{
+    height: 1.45vw;
+    outline: none;
+    font-size: 0.85vw;
+    border: none;
+    border-radius: 0.4vw;
+    border: 0.052vw solid #205AB2;
+}
+
+.one_stroke input[type="time"]{
+    width: 4.95vw;
+}
+
+.period_time{
+    display: flex;
+    justify-content: space-between;
+    width: 10.3125vw;
+}
+
+.background{
+    padding: 0.52vw;
+    margin-top: 0.52vw;
+    border-radius: 0.52vw;
+    background-color: #EDF5FB;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.title_one_stroke{
+    color: #206DB4;
+    font-size: 0.85vw;
+    width: 14.0625vw;
+}
+
+.bot_input{
+    width: 4.16vw;
+}
+
+.text_one_stroke{
+    height: 1.45vw;
+    display: flex;
+    align-items: center;
+    padding-right: 1.5625vw;
+}
+
+.small{
+    width: 9.375vw;
+}
+
+input[type="submit"]{
+    background-color: #2D76B9;
+    border-radius: 4px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-left: 2.6vw;
+    padding: 0 0.52vw ;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.input[type="submit"]:hover{
+    background-color: #205AB2;
+}
+
+.bot_content_advirsting{
+    padding: 0.78125vw 0;
+}
+
+
+.geography{
+    font-weight: bold;
+}
+
+.text_one_stroke img{
+    height: 1.04vw;
+    padding-left: 0.26vw;
+}

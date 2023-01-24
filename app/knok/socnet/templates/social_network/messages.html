@@ -1,0 +1,129 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_messages.css'%}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/chat.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/list_dialogues.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+{% verbatim %}
+<div class="dialogues" id="dialogues">
+    <div class="nav_dialogues">
+        <div class="header_nav_dialogues">
+            <div class="button_nav_dialogues">
+                <span @click="open_flist()">Создать чат</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="87"
+                     height="82" viewBox="0 0 87 82">
+                    <image id="_Group_" data-name="&lt;Group&gt;" width="87" height="82"
+                           xlink:href="data:image/png;base64,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"/>
+                </svg>
+            </div>
+            <div class="button_nav_dialogues_input">
+                <input type="text" name="" value="" placeholder="Ввести имя">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="202"
+                     height="162" viewBox="0 0 202 162">
+                    <g id="Сгруппировать_2" data-name="Сгруппировать 2" transform="translate(-268 -19)">
+                        <image id="_Group_" data-name="&lt;Group&gt;" width="116" height="123"
+                               transform="translate(268 19)"
+                               xlink:href="data:image/png;base64,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"/>
+                        <image id="_Path_" data-name="&lt;Path&gt;" width="104" height="78"
+                               transform="translate(366 103)"
+                               xlink:href="data:image/png;base64,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"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="content_nav_dialogues">
+            <div class="nav_dialogues_elem" v-for="(dialog, index) in dialogues" v-bind:roomId="dialog.id" v-bind:userId="dialog.interlocutor" @click="addUser(index, dialog.id, dialog.username)">
+                <div class="avatar_nav_dialogue">
+                    <img :src="pathAvatar(index)" alt="">
+                </div>
+                <div class="nav_dialogues_elem_info">
+                    <span>{{dialog.username}}</span>
+                    <div class="nav_dialogues_elem_info_status">on-line</div>
+                </div>
+                <div class="nav_dialogues_elem_etc">
+                    <!--<div class="nav_dialogues_elem_count"></div>
+                    <div class="nav_dialogues_elem_date"></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endverbatim %}
+    <div class="dialogue">
+        <div class="header_dialogue">
+            <div class="current_partner">
+                <div class="block_button_main">
+                    <div class="block_button_main_elem" @click="active_send_price()">
+                        <img src="{% static 'social_network/icons/suggest/price_icon.png' %}" alt="">
+                        <p class="title">Отправить подарок</p>
+                    </div>
+                    <div class="block_button_main_elem" @click="createFavorite()">
+                        <img src="{% static 'social_network/icons/suggest/crown.png' %}" alt="">
+                        <p class="title">Добавить в избранное</p>
+                    </div>
+                    <div class="block_button_main_elem" @click="active_send_kn_window()">
+                        <img src="{% static 'social_network/icons/suggest/KN.png' %}" alt="">
+                        <p class="title">Отправить KN</p>
+                    </div>
+                    <!--<div class="block_button_main_elem">
+                        <img class="money_icon" src="{% static 'social_network/icons/suggest/smile.png' %}" alt="">
+                        <p class="title">Отправить реакцию</p>
+                    </div>-->
+                    <div class="block_button_main_elem" @click="add_in_black_list()">
+                        <img class="burger" src="{% static 'social_network/icons/search/black_list.png' %}" alt="" >
+                        <p class="title">В черный список</p>
+                    </div>
+                </div>
+                {% verbatim %}
+                <div class="current_partner_block">
+                    <div class="current_partner_info">
+                        <span>{{name_interlocutor}}</span>
+                    </div>
+                    <div class="current_partner_avatar">
+                        <img v-if="selectedRoom" :src="pathAvatarInt()" alt="">
+                        <div v-else></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_dialogue">
+            <div v-for="message in messages" :class="{ 'your_mail': message.user, 'partner_mail': !message.user}" >
+                <p>
+                    {{message.text}}<span>{{message.time_send}}</span>
+                </p>
+            </div>
+        </div>
+        <div v-if="typing">{{prt}} печатает...</div>
+        <div class="func_dialogue">
+            <div class="textarea" >
+                <div class="add_textarea">
+                </div>
+                <textarea id="textarea_mail" v-model="newMessage"></textarea>
+            </div>
+            <div class="also_button">
+                <div class="send_mail_voice">
+                    <div class="send_mail_voice_button biggest_button_mail" @click="send">
+                        <svg id="send_mail_circle" xmlns="http://www.w3.org/2000/svg" width="27.53" height="21.088"
+                             viewBox="0 0 27.53 21.088">
+                            <path id="Контур_2" data-name="Контур 2"
+                                  d="M706.576,728.839l27.53-2.916L717.56,747.012l-5.221-7.73,8.272-6.781-12.07.542Z"
+                                  transform="translate(-706.576 -725.924)" fill="#fff"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endverbatim %}
+{% endblock %}
+
+{% block etc %}
+    {% include './favorites_list.html' %}
+{% endblock %}

@@ -1,0 +1,60 @@
+{% load static %}
+<nav class="navbar2" id="navbar2">
+    <div class="navbar2_space_around">
+        <div class="navbar2_space_around__container">
+            <a href="/suggestions_page">
+                <div class="navbar2_button {{suggestions_page}}">
+                    <p>ПРЕДЛОЖЕНИЯ</p>
+                    <span>{% verbatim %}{{suggestions_count}}{% endverbatim %}</span>
+                    <img class="navbar2_icon" src="{% static 'social_network/icons/navbar2/suggestions_icon.png' %}"
+                         alt="">
+                    <div class="title_nav">Развернуть полностью</div>
+                </div>
+            </a>
+            <a class="dropdown" href="/favorites">
+                <div class="navbar2_button {{favorites}}">
+                    <span>{% verbatim %}{{favorite_count}}{% endverbatim %}</span>
+                    <p>ИЗБРАННОЕ</p>
+                    <img class="navbar2_icon" src="{% static 'social_network/icons/navbar2/favorites_icon.png' %}"
+                         alt="">
+                    <div class="title_nav">Развернуть полностью</div>
+                </div>
+            </a>
+            <a href="/who_came" class="dropdown">
+                <div class="navbar2_button {{who_came}}">
+                    <p>КТО ЗАХОДИЛ</p>
+                    <img class="navbar2_icon" src="{% static 'social_network/icons/navbar2/whocame_icon.png' %}" alt="">
+                    <div class="title_nav">Развернуть полностью</div>
+                </div>
+            </a>
+            <a href="/price_list" class="dropdown">
+                <div class="navbar2_button {{price_list}}" id="your_price">
+                    <p>ВАМ ПОДАРИЛИ</p>
+                    <span>{% verbatim %}{{prices_count}}{% endverbatim %}</span>
+                    <img class="navbar2_icon" src="{% static 'social_network/icons/navbar2/price_icon.png' %}" alt="">
+                    <div class="title_nav">Развернуть полностью</div>
+                </div>
+            </a>
+            <!--<a href="map" class="dropdown">
+               <div class="navbar2_button {{map}}" id="map">
+                  <p>КАРТА</p>
+                  <img class="navbar2_icon" src="" alt="">
+                  <div class="title_nav">Развернуть полностью</div>
+               </div>
+            </a>-->
+        </div>
+    </div>
+    <div id="icon_detail_flex_end">
+        <!--<div class="ghost">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <p>Вкл. невидимку</p>
+        </div>-->
+
+        <!--<div class="hide_advirsting">
+            <div class="hide_advirsting_button">Скрыть рекламу</div>
+        </div>-->
+    </div>
+</nav>

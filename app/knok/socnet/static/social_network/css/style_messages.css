@@ -1,0 +1,553 @@
+.dialogues{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.nav_dialogues{
+  width: 12.5vw;
+  box-sizing: border-box;
+  margin-right: 1.04vw;
+}
+
+.header_nav_dialogues{
+  box-sizing: border-box;
+  padding-top: 1.04vw;
+}
+
+.button_nav_dialogues{
+  width: 100%;
+  height: 1.5625vw;
+  display: flex;
+  align-items: center;
+  border-radius: 0.52vw ;
+  box-sizing: border-box;
+  padding: 0 0.52vw  0 1.04vw;
+  background-color: #206DB4;
+  cursor: pointer;
+  transition: .4s;
+  margin-bottom: 0.26vw;
+  justify-content: space-between;
+}
+
+.burger{
+  width: 1.3vw;
+}
+
+.button_nav_dialogues svg{
+  width: 26.5px;
+  height: 1.3vw;
+}
+
+.button_nav_dialogues:hover{
+  background-color: #205AB2;
+}
+
+.button_nav_dialogues span{
+  font-size: 0.625vw ;
+  color: white;
+}
+
+.button_nav_dialogues_input{
+  position: relative;
+}
+
+.button_nav_dialogues_input svg{
+  position: absolute;
+  right: 0.52vw ;
+  top: 0.104vw;
+  width: 1.3vw;
+  height: 1.3vw;
+  cursor: pointer;
+}
+
+
+.header_nav_dialogues input[type="text"]{
+  width: 100%;
+  height: 1.5625vw;
+  background-color: #EDF5FB;
+  outline: none;
+  border: none;
+  border-radius: 0.52vw ;
+  padding: 0 0 0 1.04vw;
+  box-sizing: border-box;
+  border: 0.052vw solid #205AB2;
+}
+
+.filter_nav_dialogues{
+  display: flex;
+  margin: 0.52vw  0;
+}
+
+.filter_nav_dialogues_elem:first-child{
+  padding-left: 0.52vw ;
+}
+
+.filter_nav_dialogues_elem{
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 1.04vw;
+  font-size: 0.625vw ;
+  color: #BFBFBF;
+}
+
+.filter_nav_dialogues_elem p{
+  padding: 0.15625vw 0 0 0.26vw;
+  cursor: pointer;
+}
+
+.filter_checkbox{
+  width: 0.9375vw;
+  height: 0.9375vw;
+  border: 0.052vw solid #5E5E5E;
+  border-radius: 0.15625vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E4E4E4;
+  cursor: pointer;
+}
+
+
+.nav_dialogues_elem{
+  box-sizing: border-box;
+  width: 100%;
+  height: 3.64vw;
+  border-left: 0.2vw solid #206DB4;
+  background-color: #EDF5FB;
+  display: flex;
+  padding: 0.15625vw 0 0 0;
+  align-items: flex-start;
+  margin: 0.52vw 0;
+  cursor: pointer;
+  transition: .4s all ease-in-out;
+}
+
+
+.nav_dialogues_elem:hover{
+  background-color: #C7E4FB;
+}
+
+.avatar_nav_dialogue{
+  margin-left: 0.78125vw;
+  width: 3.125vw;
+  height: 3.125vw;
+  background-color: white;
+  border: 0.15625vw solid #206DB4;
+  border-radius: 100%;
+}
+
+.avatar_nav_dialogue img{
+  height: 3.125vw;
+  width: 3.125vw;
+    object-fit: cover;
+  border-radius: 100%;
+}
+
+.nav_dialogues_elem_info{
+  padding: 0 0.52vw;
+}
+
+.nav_dialogues_elem_info span{
+  color: #206DB4;
+  font-size: 0.625vw;
+  font-weight: bold;
+}
+
+.nav_dialogues_elem_info_status{
+  color: #BFBFBF;
+  font-size: 0.625vw;
+}
+
+
+.nav_dialogues_elem_count{
+  background-color: #206CB4;
+  width: 1.3vw;
+  height: 0.78125vw;
+  border-radius: 0.52vw;
+  color: white;
+  padding: 0.15625vw 0.26vw;
+}
+
+
+.nav_dialogues_elem_date{
+  color: #BFBFBF;
+  font-size: 0.41vw;
+}
+
+.header_dialogue{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0.52vw 0;
+  width: 40.625vw;
+  height: 3.64vw;
+  background-color: #206DB4;
+  padding: 0 0.52vw;
+}
+
+.black_list_button{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 1vw;
+}
+
+.black_list_button img{
+  width: 1.5625vw;
+}
+
+.checkbox_block_mail{
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.checkbox_block_mail span{
+  color: white;
+  font-size: 0.78125vw;
+}
+
+.current_partner_info span{
+  font-size: 1.09vw;
+  color: white;
+}
+
+.current_partner_info_status{
+  font-size: 0.625vw;
+  color:#BFBFBF;
+}
+
+.current_partner{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current_partner_block{
+  display: flex;
+  margin-right: 0.52vw;
+}
+
+.current_partner_avatar{
+  box-sizing: border-box;
+  width: 3.3vw;
+  height: 3.3vw;
+  border: 0.2vw solid #EC95C7;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.current_partner_avatar img{
+  width: 2.9vw;
+  height: 2.9vw;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.content_dialogue{
+    max-height: 30vw;
+    overflow-x: auto;
+}
+
+.content_dialogue div p{
+  background-color: #EDF5FB;
+  padding: 0.52vw ;
+  border-radius: 0.78125vw;
+  position: relative;
+  margin-bottom: 1.04vw;
+  max-width: 35vw;
+  word-wrap: break-word;
+}
+
+.content_dialogue div p span{
+    position: absolute;
+    font-size: 9px;
+    bottom: -15px;
+    box-sizing: border-box;
+    width: 2.34375vw;
+    right: -20px;
+    border-radius: 0.52vw ;
+    background-color: #cfc8c8db;
+    padding: 0.15625vw;
+}
+
+.your_mail{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1.82vw;
+  box-sizing: border-box;
+}
+
+.partner_mail{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.func_dialogue{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  padding: 0.78125vw 0;
+  border-top: 0.15625vw solid #206DB4;
+  margin-top: 1.04vw;
+  padding-top: 1.04vw;
+  width: 40.625vw;
+  background-color: white;
+}
+
+.textarea{
+  position: relative;
+  box-sizing: border-box;
+  padding: 0.26vw 0.52vw ;
+  width: 35vw;
+  height: 4.95vw;
+  border-radius: 0.78125vw;
+  background-color: #EDF5FB;
+  display: flex;
+  border: 0.052vw solid #205AB2;
+}
+
+#textarea_mail{
+  width: 35vw;
+  height:  4.27vw;
+  outline: none;
+  border: none;
+  background-color: #EDF5FB;
+  resize: none;
+  box-sizing: border-box;
+  padding: 0.26vw 70px 0.26vw 1.5625vw;
+}
+
+.textarea_button{
+  box-sizing: border-box;
+  padding-left: 3.125vw;
+}
+
+.textarea_button div:first-child{
+  margin-bottom: 1.5625vw;
+}
+
+.textarea_button div:last-child img{
+  height: 1.15vw;
+  width: auto;
+}
+
+.textarea_button_add img{
+  width: 0.9375vw;
+}
+
+.also_button{
+  box-sizing: border-box;
+  margin-top: -15px;
+  padding: 0 0.52vw ;
+  width: 10.4vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.also_button div img:first-child{
+  padding-bottom: 1.5625vw;
+}
+
+.blue_button{
+  display: flex;
+  flex-direction: column;
+}
+
+.pink_button{
+  display: flex;
+  flex-direction: column;
+}
+
+.blue_button img{
+  width: 1.3vw;
+}
+
+.pink_button img{
+  width: 1.5625vw;
+}
+
+.dialogue{
+  position: relative;
+  width: 40.625vw;
+}
+
+.add_textarea img{
+  cursor: pointer;
+}
+
+.textarea_button_add img{
+  cursor: pointer;
+}
+
+.also_button div img{
+  cursor: pointer;
+}
+
+#add_file:hover path{
+  stroke: #EC95C7;
+}
+
+#smile_svg{
+  position: absolute;
+  top: 0.26vw;
+  left: 0.26vw;
+  cursor: pointer;
+}
+
+#smile_svg path{
+  transition: .3s all ease-in-out;
+}
+
+#smile_svg:hover path{
+  stroke: #EC95C7;
+}
+
+#smile_svg:hover .svg_fill{
+  fill:#EC95C7;
+}
+
+#add_file{
+  position: absolute;
+  top: 0.52vw ;
+  right: 0.26vw;
+  width: 1.3vw;
+  height: 22.5px;
+  cursor: pointer;
+}
+
+#add_file path{
+  transition: .3s all ease-in-out;
+}
+
+#photo_circle{
+  position: absolute;
+  bottom: 0.78125vw;
+  right: 0.26vw;
+  width: 1.5625vw;
+  height: 23.6px;
+  cursor: pointer;
+}
+
+#photo_circle path{
+  transition: .3s all ease-in-out;
+}
+
+#photo_circle:hover circle{
+  transition: .3s all ease-in-out;
+}
+
+#photo_circle:hover path{
+  fill: #EC95C7;
+}
+
+#photo_circle:hover circle{
+  fill: #EC95C7;
+}
+
+.block_button_main{
+    display: flex;
+}
+
+.send_mail_voice_button{
+    background-color: #206DB4;
+    width: 2.6vw;
+    height: 2.6vw;
+    border-radius: 0.52vw ;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.52vw ;
+    transition: all .3s ease-in-out;
+}
+
+.send_mail_voice_button:hover{
+    background-color: #EC95C7;
+}
+
+.list_favorites_dialogues{
+    position: absolute;
+    display: none;
+    width: 11.71875vw;
+    height: auto;
+    margin-left: 17vw;
+    top: 23vh;
+    background-color: white;
+    padding: 0.52vw ;
+    border: 0.052vw solid #206DB4;
+    border-radius: 0.52vw ;
+}
+
+.list_favorites_dialogues.is_active{
+    display: block;
+}
+
+.elem_list_favorites_dialogues{
+    width: 11.71875vw;
+    height: 3.64vw;
+    display: flex;
+    background-color: white;
+    border: 0.052vw solid #206DB4;
+    margin: 0 0 0.26vw 0;
+    border-radius: 0.52vw ;
+    cursor: pointer;
+    transition: ease .5s;
+}
+
+.elem_list_favorites_dialogues:hover{
+    background-color: #EDF5FB;
+    transition: ease .5s;
+}
+
+.elem_list_favorites_dialogues:last-child{
+    margin: 0;
+}
+
+.elem_list_favorites_dialogues img{
+    width: 2.6vw;
+    height: 2.6vw;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar_new_dialog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.52vw ;
+}
+
+.container_for_img{
+    border-radius: 50%;
+    border: 0.15625vw solid #206DB4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.52vw ;
+}
+
+.container_info p{
+    font-size: 0.6vw;
+    width: 5vw;
+}
+
+.container_info span{
+    font-size: 0.78125vw;
+}
+
+.biggest_button_mail{
+    width: 5vw;
+    height: 5vw;
+    margin-top: 0.5vw;
+}

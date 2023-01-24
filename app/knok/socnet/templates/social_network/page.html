@@ -1,0 +1,247 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_suggestions_page.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_suggest.css'%}">
+<link rel="stylesheet" href="{% static 'social_network/css/style_page.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_photo_all_screen.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="arrow_back_next">
+        <a href="javascript:history.go(-1)">
+            <div class="title_nav">
+                Действие назад
+            </div>
+        </a>
+        <a class="arrow_next" href="javascript:history.go(1)">
+            <div class="title_nav">
+                Следующая анкета
+            </div>
+        </a>
+    </div>
+    {% verbatim %}
+    <div class="top_content" :class="{click: click}"  id="top_content_page">
+        <div class="avatar_block">
+            <div class="avatar_block__avatar">
+                <img :src="pathAvatar()" alt="">
+            </div>
+            <div class="avatar_block__info">
+                <div class="avatar_block__info__fio">
+                    {{user.first_name}} {{user.last_name}} {{user.age}}
+                </div>
+                <div class="avatar_block__info__age_city">
+                    {{ user.city }}
+                </div>
+            </div>
+        </div>
+        <div class="block_characteristic">
+            <div class="block_characteristic_title">
+                <div class="block_characteristic_title_info">
+                    <div class="title_purpose">
+                        Цель знакомства:
+                    </div>
+                    <div class="purpose">
+                        Виртуальное общение
+                    </div>
+                </div>
+                <div class="main_title">
+                    О себе
+                    <div class="purpose">
+                        {{user.bio}}
+                    </div>
+                </div>
+
+                <div class="block_characteristic_info" :class="{click: click}">
+                    <div class="also_characteristic" :class="{click: click}">
+                        Подробная информация
+                    </div>
+                    <div class="block_characteristic_info_elem" :class="{click: click}">
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Рост:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.height}}
+                            </p>
+                        </div>
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Вес:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.weight}}
+                            </p>
+                        </div>
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Курение:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.smoke}}
+                            </p>
+                        </div>
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Алкоголь:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.alcohol}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="block_characteristic_info_elem" :class="{click: click}">
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Телосложение:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.body_type}}
+                            </p>
+                        </div>
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                На теле:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.marks}}
+                            </p>
+                        </div>
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Семейное положение:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.marital_status}}
+                            </p>
+                        </div>
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Дети:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.child}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="block_characteristic_info_elem" :class="{click: click}">
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Место для встреч:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.meeting_place}}
+                            </p>
+                        </div>
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Сфера работы:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.work}}
+                            </p>
+                        </div>
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Проживание:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.accommodation}}
+                            </p>
+                        </div>
+                        <div class="block_characteristic_info_elem_line">
+                            <p class="block_characteristic_info_elem_line_name">
+                                Спонсорство:
+                            </p>
+                            <p class="block_characteristic_info_elem_line_value">
+                                {{characteristics.sponsorship}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hide_bchi" :class="{click: click, noclick: noclick}" @click="clickfun()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10">
+                            <path id="Многоугольник_1" data-name="Многоугольник 1"
+                                  d="M9.293.707a1,1,0,0,1,1.414,0l7.586,7.586A1,1,0,0,1,17.586,10H2.414a1,1,0,0,1-.707-1.707Z"
+                                  fill="#206db4"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endverbatim %}
+    <div class="bot_content">
+        <div class="bot_content_functional_block" id="bot_content_functional_block">
+            <div class="bot_content_functional_block_mail_block">
+                <div class="bot_content_functional_block_mail_block_mail">
+                    <textarea name="" cols="30" rows="10" v-model="newMessage"></textarea>
+                </div>
+                <div class="also_button">
+                <div class="send_mail_voice">
+                    <div class="send_mail_voice_button" @click="send_message();">
+                        <svg id="send_mail_circle" xmlns="http://www.w3.org/2000/svg" width="27.53" height="21.088"
+                             viewBox="0 0 27.53 21.088">
+                            <path id="Контур_2" data-name="Контур 2"
+                                  d="M706.576,728.839l27.53-2.916L717.56,747.012l-5.221-7.73,8.272-6.781-12.07.542Z"
+                                  transform="translate(-706.576 -725.924)" fill="#fff"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+                <div class="bot_content_functional_block_mail_block_pink_block">
+                    <div class="bot_content_functional_block_mail_block_pink_block_center">
+                        <div class="bot_content_functional_block_mail_block_pink_block_line">
+                            <div class="bot_content_functional_block_mail_block_pink_block_line_elem" @click="active_send_price(user_id)">
+                                <img class="unselectable" id="price_elem"
+                                     src="{% static 'social_network/icons/suggest/price_icon.png' %}" alt="">
+                            </div>
+                            <div class="bot_content_functional_block_mail_block_pink_block_line_elem" @click="createFavorite()">
+                                <img class="unselectable" src="{% static 'social_network/icons/suggest/crown.png' %}"
+                                     alt="">
+                            </div>
+                        </div>
+                        <div class="bot_content_functional_block_mail_block_pink_block_line">
+                            <div class="bot_content_functional_block_mail_block_pink_block_line_elem" @click="active_send_kn_window()">
+                                <img class="unselectable moeny_icon"
+                                     src="{% static 'social_network/icons/suggest/KN.png' %}" alt="">
+                            </div>
+                            <!--<div id="list_dop_func"
+                                 class="bot_content_functional_block_mail_block_pink_block_line_elem">
+                                <img class="unselectable" src="{% static 'social_network/icons/suggest/burger.png' %}"
+                                     alt="">
+                                <div class="list_dop_func_blocked">
+                                    <div class="line_func">
+                                        <p>Заблокировать голосовые сообщения</p>
+                                    </div>
+                                    <div class="line_func">
+                                        <p>Заблокировать голосовые сообщения</p>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bot_content_photo_block" id="bot_content_photo_block">
+        <div class="bot_content_photo_block_line">
+            <div v-for="(photo, index) in photos" class="bot_content_photo_block_line_elem" :class="{cost:photo.paid}"
+                 @click="open_slider(index);">
+                <img v-if="!photo.paid" :src="pathPhoto(index)">
+                <div class="fon" v-if="photo.paid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/page.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/photo_all_screen_page.js' %}"></script>
+{% endblock %}
+{% block etc %}
+    {% include './photo_all_screen_page.html' %}
+    {% include './send_price.html' %}
+{% endblock %}

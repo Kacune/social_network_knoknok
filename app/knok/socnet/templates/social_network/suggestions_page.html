@@ -1,0 +1,100 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_suggestions_page.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_suggest.css'%}">
+{% endblock %}
+
+{% block content %}
+<div class="content_title">Вам могут быть интересны</div>
+{% verbatim %}
+<div class="main_content1" id="suggestions_page">
+    <div class="one_suggest main_suggest" v-for="(elem, index) in suggestions_list" v-bind:class="{ opened: isOpened }">
+        <div class="one_suggest_main">
+            <div class="avatar_suggest">
+                <img class="avatar_photo_suggest" :src="pathAvatar(index)">
+                <img v-if="elem.fire_suggestion" class="fire_suggest_img"
+                     src="static/social_network/icons/suggest/fire.png">
+            </div>
+            <div class="info_man_suggest">
+                <div class="fio_suggest">{{elem.first_name}} {{elem.last_name}}</div>
+                <div class="status_suggest"> {{elem.spend}}</div>
+                <div class="flex_block">
+                    <div class="thema_suggest_suggest">Тема:&nbsp;<p>{{elem.theme}}</p></div>
+                </div>
+                <div class="lorem open_lorem">
+                    {{elem.description}}
+                </div>
+            </div>
+            <div class="flex-end_func_one_suggest">
+                <div class="func_one_suggest">
+                    <div class="title_func_one_suggest">предложение актуально до <br>
+                        <p>{{elem.duration}}</p></div>
+                    <div class="write_mail_suggestion_main button_one_suggest _big_button"
+                         @click="open_suggest($event.target.parentElement.parentElement.parentElement.parentElement)">
+                        написать сообщение
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endverbatim %}
+        <div class="one_suggest_write_mail">
+            <textarea id="textarea_suggest" v-model="newMessage" placeholder="Напишите сообщение"></textarea>
+            <div class="func_one_suggest">
+                <div class="button_line">
+                    <div class="block_button_main">
+                        <div class="block_button_main_center">
+                            <div class="block_button_main_line">
+                                <div class="block_button_main_elem" id="send_price_in_suggest" @click="active_send_price(elem.user)">
+                                    <img src="{% static 'social_network/icons/suggest/price_icon.png' %}" alt="">
+                                    <p class="title">Отправить подарок</p>
+                                </div>
+                                <div class="block_button_main_elem" @click="createFavorite(elem.user)">
+                                    <img src="{% static 'social_network/icons/suggest/crown.png' %}" alt="">
+                                    <p class="title">Добавить в избранное</p>
+                                </div>
+                            </div>
+                            <div class="block_button_main_line">
+                                <div class="block_button_main_elem" id="send_kn_in_suggest" @click="active_send_kn_window(elem.user)">
+                                    <img class="money_icon" src="{% static 'social_network/icons/suggest/KN.png' %}"
+                                         alt="">
+                                    <p class="title">Отправить KN</p>
+                                    <form @submit.prevent="send_kn(elem.user)" class="send_kn_block" v-bind:class="{active_send:active_send}">
+                                        <input type="text" v-model="kn"
+                                               placeholder="Введите сумму">
+                                        <input type="submit" value="подарить">
+                                        <div id="close_send_kn" @click="close_send_kn()">
+                                            <svg  @click="close_send_kn()" xmlns="http://www.w3.org/2000/svg" width="24.58" height="24.282"
+                                                 viewBox="0 0 24.58 24.282">
+                                                <g id="Сгруппировать_1" data-name="Сгруппировать 1"
+                                                   transform="translate(2.214 1.121)">
+                                                    <path id="cross1" data-name="Контур 3"
+                                                          d="M19.875,21.979l-4.57-6.238-4.062-4.57L8.414,8.2,5.731,5.876,2.756,3.482-.943.435"
+                                                          fill="#fff"
+                                                          stroke="#fff" stroke-width="4"/>
+                                                    <path id="cross2" data-name="Контур 1"
+                                                          d="M0,21l2.176-2.72,2.611-3.047,5.368-5.3L14.29,5.876l3.047-2.394L21.109.435"
+                                                          fill="#fff"
+                                                          stroke="#fff" stroke-width="4"/>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="send_mail_suggest_main button_suggest"
+                         @click="close_suggest($event.target.parentElement.parentElement.parentElement.parentElement); send_message(elem.user);">
+                        отправить
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/suggestions_page.js' %}"></script>
+{% endblock %}

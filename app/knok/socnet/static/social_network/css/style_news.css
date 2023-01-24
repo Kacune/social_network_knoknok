@@ -1,0 +1,25 @@
+.title_news_page{
+    padding: 0.78125vw 1.04vw;
+    font-size: 1.45vw;
+    color: #206CB4;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.content_news_page{
+    padding: 0.78125vw 1.04vwx;
+}
+
+.title_elem_content_news_page{
+    font-size: 1.15vw;
+    color: #206CB4;
+    font-weight: 400;
+    padding: 0 1.04vw;
+}
+
+.description_elem_content_news_page{
+    padding-top: 0.78125vw;
+    font-size: 1.04vw;
+    color: #BFBFBF;
+    padding: 0 1.04vw;
+}

@@ -1,0 +1,68 @@
+{% load static %}
+{% verbatim %}
+<div class="one_suggest pad_one_suggest" v-bind:class="{ active: isActive, opened: isOpened }" id="one_suggest">
+    <div class="one_suggest_block">
+        <div class="avatar_suggest">
+            <img class="avatar_photo_suggest" v-bind:src="path_avatar_suggest(avatar)">
+            <img v-if="fire_suggestion" class="fire_suggest_img" src="static/social_network/icons/suggest/fire.png">
+        </div>
+        <div class="info_man_suggest">
+            <div class="fio_suggest">{{first_name}} {{last_name}}</div>
+            <div class="status_suggest"></div>
+            <div class="flex_block">
+                <div class="thema_suggest_suggest">Тема:&nbsp <p>{{theme}}</p></div>
+                <div class="text_suggest_suggest"></div>
+            </div>
+            <div class="lorem" :class="{open_lorem : !isOpened}">{{description}}
+            </div>
+        </div>
+        <div class="flex-end_func_one_suggest">
+            <div class="func_one_suggest">
+                <div class="title_func_one_suggest">предложение актуально до <br>
+                    <p>{{duration}}</p></div>
+                <div id="write_mail_suggestion" v-bind:class="{hiden_write: isOpened}" class="button_one_suggest _big_button" @click="open_write()">написать сообщение</div>
+            </div>
+        </div>
+        <div id="close_suggest" @click="close_suggestion_window();">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24.58" height="24.282" viewBox="0 0 24.58 24.282">
+                <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(2.214 1.121)">
+                    <path id="cross1" data-name="Контур 3"
+                          d="M19.875,21.979l-4.57-6.238-4.062-4.57L8.414,8.2,5.731,5.876,2.756,3.482-.943.435" fill="#fff"
+                          stroke="#fff" stroke-width="4"/>
+                    <path id="cross2" data-name="Контур 1"
+                          d="M0,21l2.176-2.72,2.611-3.047,5.368-5.3L14.29,5.876l3.047-2.394L21.109.435" fill="#fff"
+                          stroke="#fff" stroke-width="4"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    {% endverbatim %}
+    <div class="one_suggest_write_mail">
+        <textarea id="textarea_suggest" v-model="newMessage" placeholder="Напишите сообщение"></textarea>
+        <div class="func_one_suggest">
+            <div class="button_line">
+                <div class="block_button_main">
+                    <div class="block_button_main_center">
+                        <div class="block_button_main_line">
+                            <div class="block_button_main_elem" @click="active_send_price(user_id)">
+                                <img src="{% static 'social_network/icons/suggest/price_icon.png' %}" alt="">
+                                <p class="title">Отправить подарок</p>
+                            </div>
+                            <div class="block_button_main_elem" @click="createFavorite(user_id)">
+                                <img src="{% static 'social_network/icons/suggest/crown.png' %}" alt="">
+                                <p class="title">Добавить в избранное</p>
+                            </div>
+                        </div>
+                        <div class="block_button_main_line">
+                            <div class="block_button_main_elem" @click="active_send_kn_window(user_id)">
+                                <img class="money_icon" src="{% static 'social_network/icons/suggest/KN.png' %}" alt="">
+                                <p class="title">Отправить KN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="send_mail_suggest" class="button_suggest" @click="send_message(); close_suggestion_window();" >отправить</div>
+            </div>
+        </div>
+    </div>
+</div>

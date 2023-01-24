@@ -1,0 +1,40 @@
+{% load static %}
+<div class="main_content" style="display: none;" id="write_mail_div">
+    <div class="block_suggest">
+        <div class="top_block_suggest">
+            <div class="back_button">
+                <h1 style="display: flex; justify-content: center; color: white;">Написать сообщение <img
+                        class="suggestion_page_img" src="{% static 'social_network/icons/navbar2/suggestions_icon.png' %}" alt=""></h1>
+                <a class="back_button_a" onclick="show('write_mail_div', 'none');">
+                    <?echo $cross;?>
+                </a>
+            </div>
+        </div>
+        <form action="my_page.php">
+            <div class="content_block_suggest">
+                <div class="content_suggest">
+                    <textarea name="" placeholder="Напишите сообщение"></textarea>
+                </div>
+            </div>
+            <div class="content_block_suggest">
+                <div class="button_line">
+                    <div class="block_button_main">
+                        <div class="block_button_main_elem">
+                            <img src="{% static 'social_network/icons/suggest/price_icon.png' %}" alt="">
+                            <p class="title">Отправить подарок</p>
+                        </div>
+                        <div class="block_button_main_elem">
+                            <img src="{% static 'social_network/icons/suggest/crown.png' %}" alt="">
+                            <p class="title">Добавить в избранное</p>
+                        </div>
+                        <div class="block_button_main_elem">
+                            <img src="{% static 'social_network/icons/suggest/KN.png' %}" alt="">
+                            <p class="title">Отправить реакцию</p>
+                        </div>
+                    </div>
+                    <input type="submit" class="button_suggest" value="отправить">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

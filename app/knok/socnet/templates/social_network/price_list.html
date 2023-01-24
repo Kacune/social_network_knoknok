@@ -1,0 +1,49 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_price.css'%}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/script_setting.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/price.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+{% verbatim %}
+<div class="price_conteiner" id="price_conteiner">
+    <div class="price_block" v-for="(elem, index) in prices">
+        <div class="price_icon_div">
+            <img class="price_icon" :src="pathPrice(index)">
+        </div>
+        <div class="price_cost">
+            <p class="price_cost_text">{{elem.cost}} KN</p>
+        </div>
+        <div class="price_user">
+            <div class="price_send_user">
+                <div>
+                    <div class="price_send">
+                        <img class="price_send_avatar" :src="pathAvatarSend(index)">
+                    </div>
+                    <div class="price_send_online">
+                        <p class="">online</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="price_date">{{elem.time_create}}</div>
+                <div>
+                    <p class="price_first_name">{{elem.first_name}}</p>
+                    <p class="price_age_city">{{ elem.age }}, {{ elem.city }}</p>
+                </div>
+                <div class="price_buttons_div">
+                    <div class="price_button" @click="transferPrice(elem, index)">принять подарок</div>
+                    <div class="price_button" @click="refusePrice(elem, index)">отказаться от подарка</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endverbatim %}
+{% endblock %}

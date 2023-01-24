@@ -1,0 +1,44 @@
+<div>
+    <div class="title_suggestion_bar">
+        <div class="line_angle">
+            <div class="angle"></div>
+        </div>
+        <!--
+        <div class="sort_suggest">
+            <svg id="filter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45"
+                 height="51" viewBox="0 0 45 51">
+                <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(-181 -49)">
+                    <image id="_Group_" data-name="&lt;Group&gt;" width="45" height="13" transform="translate(181 49)"
+                           xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAANCAYAAAA9tuesAAAABHNCSVQICAgIfAhkiAAAAjJJREFUSEvF1surTlEYBvDfQXK/X8otG+Wey8hAUgxkz08pIlPZRkrMjAyMdjLDX3BM2CZKysBlYEAUyj65RO7kfjt6tT59PufwkcNbq92+vetZ73qe510dPT092omsqIZgIsZhGAa3/BeJXqRnz/EGz+syj+tfjY7eQGdFNQJrsBrLMQ+T/nDmd3iCh7iH+7iD26jT6K7L/EO7+b8DnRXVNOzGJgTwfxUfcRNXcQWX0rhRl/mnVhDfQGdFtRkH09b3BfYVniImCSp8bvpwAEal+zF9UOh3i/A6gT+Do3WZn4sEX0FnRbUVh1oyxjYew2lcjkrUZR6g246kg1hA6CD0MBlTMBUzMAuzMbbNpKfQ2TFz+/Hx6G6iQ3BtJ7rqMo+K9ntkRTUB87EQi7EUSzC8l8n3B+gtOJJe3sWyusxDNP81sqIaiAUIFuwIViRA+wL0NhxID0LNG3G2LvP2vLAflpYV1VCsT4DXIfTSiF0Bek5SbLPvhiWdQHDofF3mQZ9+i6yoQsBBixVYley2N2qcxIaGEDsTRaJp9BbPcC156i08wuPkv+EibxFKb43Y4rDOqNzIJLgQZXA4BDkdWRLmz4pyAXvrMq/io2bLi5/3xEp+YXv9VvGWxNGQunC4YXWN9z90xKZuuBYrsQiD/gHSB7gYekq0DF390Fi+q3RfoJLXzkWM2I3Y0vDcsMrR6QzSaCrNaaJ9x7kjBB1nkfd4mZpTo62HvQbdrtdlHpRrK74AAYWt6u4+XbkAAAAASUVORK5CYII="/>
+                    <image id="_Group_2" data-name="&lt;Group&gt;" width="45" height="47" transform="translate(181 53)"
+                           xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAvCAYAAAB30kORAAAABHNCSVQICAgIfAhkiAAABPNJREFUaEPVmWmollUQgJ9LVGbQZhsE0WmhEqVoQSsrNTRokCwjswXKFkzwpJWGpLig0Wo60WrlH8uyICtP+yKt0kIEUhjUKeiP2UL9KLLFmJo3jtd7P7/v3vd6751f977vOXOeb96ZM3PmtG3dupX+ICGmwcAPWWVTW3+ADjFdCDwJ/A6MbDts2tr9AQUOBmZklU/7muVDTAZs4CazDHoWcJs/+AY4Iav82FfAQ0y7ApuAfZ1ptEEfC3wM7OEPXwDGZZW/+wJ4iGkc8Jyz/Awc+K9Ph5guB1YUkPOzyoI+Av0yMNZZVmSVyf8HYohpOXCVv7Qt5dys8nxvgoeYhgHrC4ZhWeWDEnoA8DZwkg/6BRieVT7vDfAQUxvwFjDC11+XVUbZ39tseSGmQ4EPzW984JcO/v3OBg8x2Ve3r29iX35EVnlvO2h7EGI6A3gV2M0nmPXHZBXbI3eKhJgOBz4B9vIFV2aVy6rFO0wuIaargYcKwieAi7NKj6fPENNA4F3geF//O2BIVtncENotfidwQwG+JKuU/9du9RDTLsBq4PzCLc7JKi+Vi3Waxl2BZaIJxYTZWeXW2mn/c0sLvPuAKYX+hVllXvv1GtYeISZLOK8UEWzuMTWrPFAnuAPfC1xb6DWDTerIJXdYMIWY9vatcGjxyWoDDzFZwD8CXFoAvwZIVtnSkXF2CO3+fRDwDnBkAT4zq9zVHYuHmKyeeAo4q9DzhpcRv3amuyloBz8EWFeA2+PFWWVOV8BDTEOAZ9rpW+O71G+NdDYN3QB8WVaZ3gp4iOkK4B5gz2Le/cC0rPLXjnS1BF2Avw4cXShvyuIecJblrizm/uF1vAViU9IytIMf4FnzuGKV8Vnl2UarhpiGA+8XY74FJlbpuSni9rVHs5Mc3HYVS/cn+7wvgGMaZc0Q0yXASh+/ARiVVVqua7pk6erHhZgsODcWvnlaI6uFmCKwzOc/mlVKN2naZt2Cdos/ZhHvK87NKos6Wz3EdDNQvV+aVWY0TVoMrAN6KlAF0Zqscl4DaEvJ8/39gqxS/d0Sex3Qp3uxbgt/lVWOaABtyeh6fz8vqyxsidYH1wG9nzVRXJ/tsQM7S78hpruBak+fnlUq/26JvdvQ7tdW61r/xGRwZ0e0vgZth087hJpY/ftiR6bra9CrgIscdEpWebA/QN8OzHTQRVllbhPQc7LK4pacua5AdJ+2/XaJ61yeVa5pArrLDaG6AnES8LiDrs0q1sraTkJMtwCz/UWvQ4/xY5nxrM8qp3QCXSaX3suI7h4nAh856Masckx/gLbminWjTDZnlapDtQ17iOlG4A5/+HBWsf5Ky1KXTw8CqhJzS1bZvRNLXwcs9XerskpVaLUEXhe0Nb7Lk/OA9m20EJMdiq3PbP1wk9VZZWJLtD64Fmj3a+v1Vf2/QeVtQojJAtPaxvZFKpmcVcqeeNP8dUL/BOzjK4es8rX/mNEObD06kz+Bm7JKta83DVsNrBPa7musVWwyNKts8KuHp4svYNcPF2QVa8Z0WeqEtjPiUU5ijXlrxKQC2CrBs7OKtXC7JXVCG0zVnrXi3ra3yiUMeLRZv1u0PRCI1lM+tQMoOyCMrAvY9Ndp6TcNrh20+fBYu9ypw8I9EYjWlxtfwPUIcN2WtirPqj0T82Fr1dqlU+1Sp3ucCdj2Zul8Qlb5rHZaV/gPABJGxVvX8JgAAAAASUVORK5CYII="/>
+                </g>
+            </svg>
+        </div>
+        <div class="title_nav">
+            Фильтр
+        </div>
+        -->
+    </div>
+    {% verbatim %}
+    <div class="suggestions_bar" id="suggestions_bar">
+        <div class="suggestion_people" id="suggestion_people">
+            <div v-for="(suggest, index) in suggestions_list" class="one_man" @click="open_suggest(suggest.id)">
+                <div class="avatar_man">
+                    <img class="avatar_photo" :src="pathAvatar(index)">
+                </div>
+                <div class="info_man">
+                    <div class="fio">{{suggest.first_name}}</div>
+                    <div class="status">on-line</div>
+                    <div class="thema_suggest">Тема</div>
+                    <div class="text_suggest">{{suggest.theme}}</div>
+                </div>
+                <img v-if="suggest.fire_suggestion" class="fire_suggest_img" src="static/social_network/icons/suggest/fire.png">
+            </div>
+        </div>
+        <div class="block_button_suggest">
+            <div @click="open_create_suggest" class="button_suggest_add">РАЗМЕСТИТЬ ПРЕДЛОЖЕНИЕ</div>
+        </div>
+    </div>
+    {% endverbatim %}
+</div>

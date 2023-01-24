@@ -1,0 +1,49 @@
+.change_avatar{
+    position: fixed;
+    top: 7.3vw;
+    left: 33.85vw;
+    width: 20.8vw;
+    height: 20.8vw;
+    background-color: #EDF5FB;
+    border-radius: 1.04vw;
+    border: 0.052vw solid #206FB4;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.change_avatar input[type="file"]{
+    display: none;
+}
+
+.change_avatar label{
+    width: 15.625vw;
+    height: 15.625vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0.052vw solid #206FB4;
+    border-radius: 0.52vw ;
+    margin-bottom: 0.52vw ;
+    cursor: pointer;
+    background-color: white;
+}
+
+.change_avatar div{
+    display: flex;
+    justify-content: center;
+}
+
+.change_avatar input[type="submit"]{
+    width: 5.2vw ;
+    height: 1.9vw ;
+    border-radius: 0.52vw ;
+    outline: none;
+    background-color: #67BADE;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

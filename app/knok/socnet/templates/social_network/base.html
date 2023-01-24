@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>{{title}}</title>
+
+    <link rel="shortcut icon" href="{% static 'social_network/favicons/favicon.png' %}" type="image/png">
+
+    <script type="text/javascript" src="{% static 'social_network/js/config.js' %}"></script>
+    <script type="text/javascript" src="{% static 'social_network/js/socket.io.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{% static 'social_network/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script type="text/javascript" src="{% static 'social_network/js/script.js' %}"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'social_network/css/styles_pattern.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_suggestions_page.css'%}">
+    <link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_suggest.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_confirmation.css' %}">
+
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    {% block css_links %}
+    {% endblock %}
+</head>
+<body onload="document.getElementById('main_body').style.display='';">
+<header>
+    <!--  НАВИГАЦИЯ ПО САЙТУ I
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    {% include './base_navbar.html' %}
+    <!--  НАВИГАЦИЯ ПО САЙТУ II
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    {% include './base_navbar2.html' %}
+</header>
+
+<div class="main" id="main_body" style="display: none;">
+    <!--  ПРЕДЛОЖЕНИЯ
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    {% include './base_suggestions_bar.html' %}
+    <!--  КОНТЕНТ
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!--  РЕКЛАМА
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    {% include './base_adversting_bar.html' %}
+</div>
+{% include './write_mail_div.html' %}
+{% include './help.html' %}
+{% include './pad_one_suggest.html' %}
+{% include './main_content.html' %}
+{% include './filter.html' %}
+{% include './success_suggest.html' %}
+{% include './confirmation.html' %}
+{% include './send_price.html' %}
+{% include './send_kn.html' %}
+{% block etc %}
+
+{% endblock %}
+
+</body>
+<script type="text/javascript" src="{% static 'social_network/js/navbar2.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/navbar.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/send_price.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/filter.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/suggestions.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'social_network/js/adversting.js' %}"></script>
+<script type="text/javascript" src="{% static 'social_network/js/send_kn.js' %}"></script>
+{% block scripts %}
+{% endblock %}
+</html>

@@ -1,0 +1,133 @@
+version: '3.7'
+services:
+#  traefik:
+#    image: traefik:v2.4
+#    ports:
+#      - 8010:80
+#    volumes:
+#      - ./traefik.yml:/etc/traefik/traefik.yml
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    networks:
+#      - knok
+  ws-server:
+    container_name: ws-server
+    build:
+      context: ./ws-server
+      dockerfile: Dockerfile
+    networks:
+      - knok
+    labels:
+          - traefik.enable=true
+          - traefik.http.routers.ws-server.rule=PathPrefix(`/ws`)
+    ports:
+      - 4000:4000
+      - 8000:8000
+  knok-django-app:
+    container_name: app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+      args:
+        DB_HOST: knok-db
+        DB_NAME: knok
+        DB_USER: knok
+        DB_PASSWORD: 30333559
+    labels:
+          - traefik.enable=true
+          - traefik.http.routers.app.rule=PathPrefix(`/`)
+    volumes:
+      - ./app:/app
+      - ./media:/app/knok/media
+    depends_on:
+      - beanstalk
+    env_file: ./app/.env.production
+    networks:
+      - knok
+    restart: on-failure
+    ports:
+      - 8080:8080
+
+#  db:
+#    image: mariadb:latest
+#    container_name: knok-db
+#    restart: always
+#    environment:
+#      MYSQL_ROOT_PASSWORD:  112233
+#      MYSQL_DATABASE: knok
+#      MYSQL_USER: knok
+#      MYSQL_PASSWORD: 30333559
+#    ports:
+#      - 3309:3306
+#    volumes:
+#      - ./db/:/var/lib/mysql
+#    networks:
+#      - knok
+
+  minio:
+    image: minio/minio
+    ports:
+      - 9000:9000
+      - 9001:9001
+    command: server /data --console-address ":9001"
+    volumes:
+      - ./data:/data
+    secrets:
+      - secret_key
+      - access_key
+    networks:
+      - knok
+
+  createbuckets:
+    image: minio/mc
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc alias list;
+      until (/usr/bin/mc config host add minio http://minio:9000 w7Z3fclD Ss9Cehrh) do echo '...waiting...' && sleep 1; done;
+      /usr/bin/mc mb minio/media;
+      /usr/bin/mc policy set public minio/media;
+      exit 0;
+      "
+    networks:
+      - knok
+
+
+  mailer:
+    build:
+      context: ./mailer
+      dockerfile: Dockerfile
+    volumes:
+      - ./mailer:/code
+    environment:
+      BEANSTALK_HOST: beanstalk
+      BEANSTALK_PORT: 11300
+      ROBOT_MAIL: 'knok@r2n.ru'
+      DOMAIN: r2n.ru
+      PROTOCOL: https://
+      API_VERTION: v1
+      MAIL_SERVER: smtp.yandex.ru:465
+      MAIL_SERVER_USER: knok@r2n.ru
+      MAIL_SERVER_PASSWORD: 1yUSMxoe
+    depends_on:
+      - beanstalk
+    networks:
+      - knok
+  beanstalk:
+    image: schickling/beanstalkd
+    ports:
+      - 11300:11300
+    restart: always
+    networks:
+      - knok
+
+networks:
+  knok:
+    external: true
+    driver: bridge
+
+secrets:
+  secret_key:
+    file: ./secrets/minio_secret_key
+  access_key:
+    file: ./secrets/minio_access_key

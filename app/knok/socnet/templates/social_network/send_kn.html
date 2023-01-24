@@ -1,0 +1,21 @@
+ <form @submit.prevent="send_kn()" class="send_kn_block" v-bind:class="{active_send: isActiveKn}" id="send_kn_form">
+    <input type="text" v-model="kn"
+           placeholder="Введите сумму">
+    <input type="submit" value="подарить">
+    <div id="close_send_kn" @click="close_send_kn()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24.58" height="24.282"
+             viewBox="0 0 24.58 24.282">
+            <g id="Сгруппировать_1" data-name="Сгруппировать 1"
+               transform="translate(2.214 1.121)">
+                <path id="cross1" data-name="Контур 3"
+                      d="M19.875,21.979l-4.57-6.238-4.062-4.57L8.414,8.2,5.731,5.876,2.756,3.482-.943.435"
+                      fill="#fff"
+                      stroke="#fff" stroke-width="4"/>
+                <path id="cross2" data-name="Контур 1"
+                      d="M0,21l2.176-2.72,2.611-3.047,5.368-5.3L14.29,5.876l3.047-2.394L21.109.435"
+                      fill="#fff"
+                      stroke="#fff" stroke-width="4"/>
+            </g>
+        </svg>
+    </div>
+</form>

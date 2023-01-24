@@ -1,0 +1,150 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_advirsting.css'%}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/add_advirsting.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<form @submit.prevent="createAdvirsting" id="add_advirsting_vue">
+    <div class="top_content_advirsting">
+        <div class="column_420">
+            <div class="elem_column">
+                <div class="title_block">
+                    РАЗМЕЩЕНИЕ РЕКЛАМЫ
+                </div>
+                <div class="text_block">
+                    Правила размещения рекламы на Яндексе. Требования к рекламным материалам
+                    Реклама некоторых товаров и услуг запрещается или ограничивается действующим законодательством
+                    Республики Казахстан. На этой странице рассказывается о том, что, как и почему можно или нельзя
+                    рекламировать, а также приведены цитаты из законов, объясняющие действующие запреты и ограничения.
+                </div>
+            </div>
+            <div class="elem_column">
+                <div class="title_block">
+                    НЕЛЬЗЯ РЕКЛАМИРОВАТЬ*
+                </div>
+                <div class=ul_block>
+                    <ul>
+                        <li>товары (работы, услуги), производство и реализация которых запрещены законодательством РК;
+                        </li>
+                        <li>наркотические вещества, психотропные вещества и их прекурсоры;</li>
+                        <li>не зарегистрированные в соответствии с законодательством РК религиозные организации и
+                            духовные
+                            учебные заведения;
+                        </li>
+                        <li>порнографию;</li>
+                        <li>этиловый спирт и алкогольную продукцию;</li>
+                        <li> табак и табачные изделия;</li>
+                        <li>заменители грудного молока;</li>
+                        <li>овары и услуги, подлежащие сертификации / лицензированию, при отсутствии необходимых
+                            сертификатов / лицензий;
+                        </li>
+                        <li>финансовые пирамиды.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="elem_column">
+                <div class="title_block">
+                    НЕЛЬЗЯ РЕКЛАМИРОВАТЬ В ИНТЕРНЕТЕ*
+                </div>
+                <div class=ul_block>
+                    <ul>
+                        <li> служебное оружие, а также вооружение, военную технику и продукцию двойного назначения;</li>
+                        <li>лекарственные средства, отпускаемые по рецептам врачей.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="elem_column">
+                <div class="title_block">
+                    МОЖНО РЕКЛАМИРОВАТЬ С СОБЛЮДЕНИЕМ ОСОБЫХ ТРЕБОВАНИЙ
+                </div>
+                <div class=ul_block>
+                    <ul>
+                        <li> деятельность, подлежащая лицензированию;</li>
+                        <li>лекарственные средства, изделия медицинского назначения, медицинскую технику;</li>
+                        <li>медицинские услуги;</li>
+                        <li>финансовые, страховые, инвестиционные услуги;
+                        </li>
+                        <li> строительство жилых домов.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="elem_column_banner">
+                <div class="banner_400">
+                    <label for="upload_banner" class="elem_column_banner_title">загрузить баннер
+                        240x400px
+                    </label>
+                    <input type="file" @change="editImage" accept="image/*" id="upload_banner">
+                </div>
+                <div class="elem_column_banner_input">
+                    <input type="text" placeholder="ссылка на ваш сайт" v-model="link">
+                </div>
+                <input name="resolution" type="radio" id="240_400_baner" value="true" v-model="resolution">
+                <label for="240_400_baner">240x400</label>
+                <input name="resolution" type="radio" id="240_200_baner" value="false" v-model="resolution">
+                <label for="240_200_baner">240x200</label>
+                <div class="elem_column_banner_button">oтправить на проверку
+                    модератора
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bot_content_advirsting">
+        <div class="stroke_content">
+            <div class="title_block_bot geography">ГЕОГРАФИЯ ПОКАЗОВ</div>
+        </div>
+        <div class="stroke_content">
+            <select v-model="country">
+                <option value disabled selected>страна</option>
+                <option value="Россия">Россия</option>
+            </select>
+            <select v-model="region">
+                <option value disabled selected>регион</option>
+                <option value="Красноярский край">Красноярский край</option>
+            </select>
+            <select v-model="city">
+                <option value disabled selected>населенный пункт</option>
+                <option value="Красноярск">Красноярск</option>
+            </select>
+        </div>
+
+        <div class="stroke_content none_flex background">
+            <div class="one_stroke">
+                <div class="title_one_stroke">количество показов (дней)</div>
+                <select v-model="count_day">
+                    <option value="100">100</option>
+                </select>
+                <div class="title_one_stroke">разовое время показа секунд</div>
+                <input type="text" placeholder="147 500" v-model="time_show">
+            </div>
+            <div class="one_stroke">
+                <div class="title_one_stroke">количество показов в сутки</div>
+                <select v-model="count_in_day">
+                    <option value="100">100</option>
+                </select>
+                <div class="title_one_stroke">период показа</div>
+                <div class="period_time">
+                    <input type="time" v-model="period_start">
+                    <input type="time" v-model="time_period">
+                </div>
+            </div>
+        </div>
+        <div class="stroke_content background">
+            <div class="one_stroke ">
+                <div class="title_one_stroke bold small">ВАША СУММА</div>
+                <input class="bot_input" type="text" placeholder="100">
+                <div class="text_one_stroke"><img src="{% static 'social_network/icons/suggest/KN.png' %}" alt=""></div>
+                <input id="paid_adv" type="submit" value="ОПЛАТИТЬ">
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

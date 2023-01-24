@@ -1,0 +1,191 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_setting.css'%}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/script_setting.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="nav_setting">
+    <a id="" class="button_nav_setting js-tab-triger active" data-tab="1" href="#">
+        <div class="">ОБЩИЕ НАСТРОЙКИ</div>
+    </a>
+    <a id="black_list" class="button_nav_setting js-tab-triger" data-tab="2" href="#">
+        <div class="">ЧЕРНЫЙ СПИСОК</div>
+    </a>
+    <!--
+    <a id="blocking_messages" class="button_nav_setting js-tab-triger" data-tab="3" href="#">
+        <div class="">БЛОКИРОВКА СООБЩЕНИЙ</div>
+    </a>
+    <a id="payment_system" class="button_nav_setting js-tab-triger" data-tab="4" href="#">
+        <div class="">ПЛАТЕЖНАЯ СИСТЕМА</div>
+    </a>
+    -->
+</div>
+
+<div class="container js-tab-content active" data-tab="1">
+    <div class="general_settings" id="general_settings_block">
+        <!--<div class="general_settings_line">
+            <p class="general_settings_title">E-mail:</p>
+            <p class="general_settings_text">xxx@mail.ru</p>
+            <div class="general_settings_button_correct">изменить</div>
+        </div>
+        <div class="general_settings_line">
+            <p class="general_settings_title">Пароль:</p>
+            <div class="general_settings_button_correct">изменить</div>
+        </div>
+        <div class="general_settings_line">
+            <p class="general_settings_title">Телефон:</p>
+            <div class="ext">
+                <input type="text" name="" value="">
+                <p>формат номера:+79119999999</p>
+            </div>
+
+            <div class="general_settings_button_confirm">подтвердить номер</div>
+        </div>
+
+
+        <div class="general_settings_line">
+            <p class="general_settings_title">Адрес страницы:</p>
+            <p class="general_settings_text" style="padding-right: 1.04vw;">http://knoknok.ru/</p>
+            <div class="ext">
+                <input type="text" name="" value="" placeholder="    user//11111.ru">
+                <p>Адрес страницы должен быть уникальным, не короче 5и не длинее 30 символов. Допустимы английские
+                    буквы, символы и дефис</p>
+            </div>
+            <div class="general_settings_button_confirm">сохранить адрес</div>
+        </div>
+        <div class="general_settings_line">
+            <p class="general_settings_title">Звуковые уведомления:</p>
+            <div class="button_audio">
+                <input type="checkbox" name="" value="" checked>
+                <label for="">ВКЛЮЧИТЬ звуковые уведомления</label>
+                <div class="audio_ext">
+                    <div class="option_audio">
+                        <input type="checkbox" name="" value="" checked>
+                        <label for="">Сообщения</label>
+                    </div>
+                    <div class="option_audio">
+                        <input type="checkbox" name="" value="" checked>
+                        <label for="">Подарки</label>
+                    </div>
+                    <div class="option_audio">
+                        <input type="checkbox" name="" value="" checked>
+                        <label for="">Новости</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="general_settings_line">
+            <p class="general_settings_title">Трансляция активности в статусе:</p>
+            <div class="translation">
+                <input type="checkbox" name="" value="" checked>
+                <label for="">ВКЛЮЧИТЬ трансляцию моих действий в статусе</label>
+            </div>
+        </div>
+        <div class="general_settings_line">
+            <div class="general_settings_title">Настройки переписки:</div>
+            <div class="write_mail">
+                <div class="elem_mail_setting">
+                    <label for=""></label>
+                    <input type="checkbox" checked>
+                    <label class="setting_mail_label">Удалять после прочтения</label>
+                </div>
+                <div class="elem_mail_setting">
+                    <label for=""></label>
+                    <input type="checkbox">
+                    <label class="setting_mail_label">Удалять через определенное время</label>
+                </div>
+                <div class="elem_mail_setting">
+                    <label for=""></label>
+                    <input type="checkbox">
+                    <label class="setting_mail_label">Не удалять</label>
+                </div>
+            </div>
+        </div>-->
+        <div class="general_settings_line">
+            <div class="general_settings_title">Вам могут отправлять письменные сообщения:</div>
+            <div class="write_mail">
+                <div class="elem_mail_setting">
+                    <label for=""></label>
+                    <input type="checkbox" checked>
+                    <label>Все</label>
+                </div>
+                <div class="elem_mail_setting">
+                    <label for=""></label>
+                    <input type="checkbox">
+                    <label>Избранные</label>
+                </div>
+                <div class="elem_mail_setting">
+                    <label for=""></label>
+                    <input type="checkbox">
+                    <label>Никто</label>
+                </div>
+            </div>
+        </div>
+        <div class="general_settings_line">
+            <div class="general_settings_title">Вам могут отправлять голосовые сообщения:</div>
+            <div class="write_mail">
+                <div class="elem_mail_setting">
+                    <label for=""></label>
+                    <input type="checkbox" checked>
+                    <label>Все</label>
+                </div>
+                <div class="elem_mail_setting">
+                    <label for=""></label>
+                    <input type="checkbox">
+                    <label>Избранные</label>
+                </div>
+                <div class="elem_mail_setting">
+                    <label for=""></label>
+                    <input type="checkbox">
+                    <label>Никто</label>
+                </div>
+            </div>
+        </div>
+        <div class="general_settings_line">
+            <p class="general_settings_title">Удалить страницу:</p>
+            <div class="general_settings_button_correct">Удалить</div>
+        </div>
+        <div class="save_settings">
+            <div class="button_save_settings">Сохранить</div>
+        </div>
+    </div>
+</div>
+<div class="container js-tab-content" data-tab="2" id="settings_black_list">
+    {% verbatim %}
+    <div class="black_list" id="black_list_block">
+        <div class="black_list_elem" v-for="(elem, index) in black_list">
+            <div class="black_list_elem_person">
+                <img class="black_list_elem_avatar_photo" :src="pathAvatar(index)">
+            </div>
+            <div class="info_man_black_list">
+                <div class="fio_black_list">{{elem.black_list_user.first_name}} {{elem.black_list_user.last_name}}</div>
+            </div>
+            <div class="black_list_elem_area_button">
+                <div class="black_list_elem_button" @click="delete_black_list(elem, index)">
+                    разблокировать
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endverbatim %}
+</div>
+<!--
+<div class="container js-tab-content" data-tab="3" style="justify-content: space-between;">
+    <div class="blocking_messages" id="blocking_messages_block">
+        {% for line in lines_blockings %}
+            {% include './setting_line_blocking_messages.html' %}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container js-tab-content" data-tab="4">
+
+</div>
+-->
+{% endblock %}

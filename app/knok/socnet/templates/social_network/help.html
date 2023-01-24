@@ -1,0 +1,43 @@
+{% load static %}
+<div class="main_content_suggest" id="help">
+    <div class="block_suggest">
+        <div class="top_block_suggest">
+            <div class="back_button">
+                <h1 style="display: flex; justify-content: center; color: white;">Техническая поддержка
+                    <div class="intro_h1">
+                        <img src="{% static 'social_network/icons/navbar2/suggestions_icon.png' %}">
+                    </div>
+                </h1>
+                <a onclick="show('help', 'none');">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24.58" height="24.282" viewBox="0 0 24.58 24.282">
+                        <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(2.214 1.121)">
+                            <path id="cross1" data-name="Контур 3"
+                                  d="M19.875,21.979l-4.57-6.238-4.062-4.57L8.414,8.2,5.731,5.876,2.756,3.482-.943.435"
+                                  fill="#fff" stroke="#fff" stroke-width="4"/>
+                            <path id="cross2" data-name="Контур 1"
+                                  d="M0,21l2.176-2.72,2.611-3.047,5.368-5.3L14.29,5.876l3.047-2.394L21.109.435"
+                                  fill="#fff" stroke="#fff" stroke-width="4"/>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <form action="my_page.php">
+            <div class="content_block_suggest">
+                <div class="theme">
+                    <input style="width: 780px;" type="text" placeholder="Тема:">
+                </div>
+            </div>
+            <div class="content_block_suggest">
+                <div class="content_suggest">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="content_block_suggest">
+                <div class="button_line">
+                    <input type="submit" class="button_suggest" value="отправить">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

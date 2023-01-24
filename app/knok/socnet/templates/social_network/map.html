@@ -1,0 +1,19 @@
+{% extends 'social_network/base.html' %}
+{% block content %}
+<div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+    <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+    <script>(function () {
+        var setting = {"height":900,"width":1200,"zoom":10,"queryString":"Красноярск, Россия","place_id":"ChIJ4zf_ocmv11wR_0fWj0bhl9U","satellite":false,"centerCoord":[],"cid":"0xd597e1468fd647ff","lang":"ru","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"527310"};
+        var d = document;
+        var s = d.createElement('script');
+        s.src = 'https://1map.com/js/script-for-user.js?embed_id=527310';
+        s.async = true;
+        s.onload = function (e) {
+          window.OneMap.initMap(setting)
+        };
+        var to = d.getElementsByTagName('script')[0];
+        to.parentNode.insertBefore(s, to);
+      })();
+    </script>
+    <a href="https://1map.com/ru/map-embed">1 Map</a></div>
+{% endblock %}

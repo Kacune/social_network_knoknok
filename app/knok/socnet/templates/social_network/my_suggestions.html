@@ -1,0 +1,48 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_suggestions_page.css'%}">
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_suggest.css'%}">
+{% endblock %}
+
+{% block content %}
+{% verbatim %}
+<div class="content_title">Ваши предложения</div>
+<div class="main_content1" id="suggestions_page_my">
+    <div class="one_suggest" v-for="(elem, index) in suggestions_list">
+        <div class="avatar_suggest">
+            <img class="avatar_photo_suggest" :src="pathAvatar(index)">
+            <img v-if="elem.fire_suggestion" class="fire_suggest_img"
+                 src="static/social_network/icons/suggest/fire.png">
+        </div>
+        <div class="info_man_suggest">
+            <div class="fio_suggest">{{elem.first_name}} {{elem.last_name}}</div>
+            <div class="status_suggest">{{elem.spend}}</div>
+            <div class="flex_block">
+                <div class="thema_suggest_suggest">Тема:&nbsp;<p>{{elem.theme}}</p></div>
+            </div>
+            <div class="lorem">
+                {{elem.description}}
+            </div>
+        </div>
+
+        <div class="flex-end_func_one_suggest">
+            <div class="func_one_suggest">
+                <div class="title_func_one_suggest">предложение актуально до</div>
+                <div class="time_func_one_suggest">{{elem.duration}}</div>
+                <div class="button_one_suggest" @click="open_correct(elem)">редактировать</div>
+                <div class="button_one_suggest" @click="open_confirm(elem.id, index, elem)">удалить</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endverbatim %}
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/suggestions_page_my.js' %}"></script>
+{% endblock %}
+
+{% block etc %}
+{% include './correct_suggest.html' %}
+{% endblock %}

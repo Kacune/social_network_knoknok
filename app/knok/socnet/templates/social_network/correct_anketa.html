@@ -1,0 +1,156 @@
+{% extends 'social_network/base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link type="text/css" rel="stylesheet" href="{% static 'social_network/css/style_anketa.css'%}">
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'social_network/js/correct.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+{% verbatim %}
+<div class="my_anketa" id="my_anketa">
+    <form @submit.prevent="correct()">
+        <div class="title_my_anketa">МОЯ АНКЕТА</div>
+        <div class="line_my_anketa">
+            <div class="elem_line_my_anketa">
+                <div class="title_line_my_anketa">Имя</div>
+                <input type="text" v-model="user_data.first_name">
+            </div>
+            <div class="elem_line_my_anketa">
+                <div class="title_line_my_anketa">Фамилия</div>
+                <input type="text" v-model="user_data.last_name">
+            </div>
+            <div class="elem_line_my_anketa">
+                <div class="title_line_my_anketa">Пол</div>
+                {% endverbatim %}
+                <div class="elem_line_my_anketa_sex">
+                    <img :class="{select_sex: male}" src="{% static 'social_network/icons/search/male.png' %}" @click="changeGender('male')">
+                    <img :class="{select_sex: female}" src="{% static 'social_network/icons/search/female.png' %}" @click="changeGender('female')">
+                </div>
+                {% verbatim %}
+            </div>
+            <div class="elem_line_my_anketa">
+                <div class="title_line_my_anketa">Страна</div>
+                <select v-model="user_data.country">
+                    <option value="Россия">Россия</option>
+                    <option value="Казахстан">Казахстан</option>
+                    <option value="Украина">Украина</option>
+                </select>
+            </div>
+            <div class="elem_line_my_anketa">
+                <div class="title_line_my_anketa">Город</div>
+                <select v-model="user_data.city">
+                    <option value="Красноярск">Красноярск</option>
+                    <option value="Москва">Москва</option>
+                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                    <option value="Севастополь">Севастополь</option>
+                    <option value="Новгород">Новгород</option>
+                    <option value="Казань">Казань</option>
+                    <option value="Владивосток">Владивосток</option>
+                    <option value="Норильск">Норильск</option>
+                </select>
+            </div>
+        </div>
+        <div class="title_my_anketa">День рождения</div>
+        <div class="line_my_anketa birthday">
+            <input type="date" v-model="user_data.birthday">
+        </div>
+        <div class="line_my_anketa">
+            <div class="column_my_anketa">
+                <div class="line_column_my_anketa">
+                    <p>Рост</p>
+                    <select v-model="characteristics.height">
+                        <option v-for="elem in heights" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>Вес</p>
+                    <select v-model="characteristics.weight">
+                        <option v-for="elem in weights" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>Телосложение</p>
+                    <select v-model="characteristics.body_type">
+                        <option v-for="elem in body_type" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>На теле</p>
+                    <select v-model="characteristics.marks">
+                        <option v-for="elem in marks" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>Курение</p>
+                    <select v-model="characteristics.smoke">
+                        <option v-for="elem in smoke" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>Семейное положение</p>
+                    <select v-model="characteristics.marital_status">
+                        <option v-for="elem in marital_status" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="column_my_anketa">
+                <div class="line_column_my_anketa">
+                    <p>Дети</p>
+                    <select v-model="characteristics.child">
+                        <option v-for="elem in child" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>Проживание</p>
+                    <select v-model="characteristics.accommodation">
+                        <option v-for="elem in accommodation" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>Сфера работы</p>
+                    <select v-model="characteristics.work">
+                        <option v-for="elem in work" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>Алкоголь</p>
+                    <select v-model="characteristics.alcohol">
+                        <option v-for="elem in alcohol" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>Место для встреч</p>
+                    <select v-model="characteristics.meeting_place">
+                        <option v-for="elem in meeting_place" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+                <div class="line_column_my_anketa">
+                    <p>Спонсорство</p>
+                    <select v-model="characteristics.sponsorship">
+                        <option v-for="elem in sponsorship" v-bind:value="elem.value">{{elem.value}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="line_my_anketa">
+            <div class="line_description_my_anketa">
+                <p>Коротко о себе</p>
+                <textarea v-model="user_data.bio" placeholder="Краткое описание" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="line_etc">
+            <input type="submit" value="СОХРАНИТЬ">
+        </div>
+        <div class="close_anketa">
+            <a href="my_page.php">
+            </a>
+        </div>
+    </form>
+</div>
+{% endverbatim %}
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="shortcut icon" href="{% static 'social_network/favicons/favicon.png' %}" type="image/png">
+    <link type="text/css" rel="stylesheet" href="{% static 'social_network/css/sign/style_sign.css' %}">
+    <script type="text/javascript" src="{% static 'social_network/js/config.js' %}"></script>
+    <script src="{% static 'social_network/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div class="main_window_sign">
+        <div class="registration" id="signIn">
+            <div class="registration_title flex_center">Авторизация на<img src="{% static 'social_network/icons/sign/knoknok.png' %}"></div>
+            <form @submit.prevent="getToken">
+                <div class="line_field">
+                    <p>Email</p>
+                    <input type="text" v-model="email">
+                </div>
+                <div class="line_field">
+                    <p>Пароль</p>
+                    <input type="password" v-model="password">
+                </div>
+                <div class="line_field">
+                    <input type="submit" value="Авторизоваться">
+                </div>
+                <div class="line_field">
+                    <a href="up">Ещё не зарегестрировались?</a>
+                </div>
+                <div class="line_field">
+                    <a href="reset">Сменить пароль</a>
+                </div>
+            </form>
+        </div>
+        <div class="sign_in_sn">
+
+        </div>
+        <img id="logo" src="{% static 'social_network/icons/sign/logo.png' %}">
+        <img id="phone" src="{% static 'social_network/icons/sign/phone.png' %}">
+    </div>
+    <img class="background_bottom" src="{% static 'social_network/icons/sign/background_bottom.png' %}">
+</body>
+<script type="text/javascript" src="{% static 'social_network/js/sign/signIn.js' %}"></script>
+</html>
